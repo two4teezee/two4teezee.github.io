@@ -1,5 +1,5 @@
 ---
-title: What I learned By Creating the Ikemen GO Trials Mode
+title: What I Learned By Creating the Ikemen GO Trials Mode
 published: 2025-08-23
 description: 'Random thoughts on best practices for creating Ikemen GO modules'
 image: './trials.png'
@@ -8,11 +8,11 @@ category: 'Rant'
 draft: false 
 lang: ''
 ---
-
 # Background
 In February of 2021, I released a [video](https://www.youtube.com/watch?v=PoMTlgYuUNw) of brokenIKEMEN and an Ikemen GO Trials Mode based off the Ikemen 0.98.2 release.
 This video was the culmination of a few months of work porting over what I was calling brokenMUGEN 1.0, a project which had been dormant for several years, into Ikemen GO.
-But what happened between 2021 and 2024?
+It also showcased a limited Trials Mode I had created.
+But, I never released that version of Trials Mode - the first release of Trials Mode actually came in 2024.
 Why was the project dormant for so long?
 ## Coming Back to the Scene
 Like many others, I came back to the scene in mid-to-late 2020, during peak COVID, wondering what had happened in the 6+ years since I had left it.
@@ -41,6 +41,10 @@ In this blog entry I'll pass on some lessons I learned along the way.
 This might be a useful resource for someone attempting to develop an Ikemen GO module.
 ## Initializing a Module
 The first thing necessary for initializing a module is to have the right hooks added in.
+If you have functionality that needs to run when any game mode or existing function is running, this is the way to do it.
+For instance, Trials Mode needs to read in files, draw graphical elements, and monitor for hits.
+I also implemented functionality on the Select Screen to darken portraits for characters without Trials definition files.
+So, Trial Mode's hook statements look like this:
 ```lua
 hook.add("loop#trials", "f_trialsMode", start.f_trialsMode)
 hook.add("start.f_selectScreen", "f_trialsSelectScreen", start.f_trialsSelectScreen)
@@ -121,8 +125,14 @@ Halfway through the project, `training.zss` was revamped in a big way.
 This was not a huge problem, but it did break the module.
 Breakage will occur as the engine evolves, that's just the nature of things; however, you should do your best to minimize that, even if it means your module requires a bit more setup to work (like specifying a new common state file!).
 This led me to create my own `trials.zss` which minimized code duplication by culling out what was no longer needed, creating in the new functions necessary, and minimizing dependencies on files that are likely to change in the future.
+
+Regardless, if you have complex functionality, be ready for your module to need consistent updating.
+Ikemen GO's Lua codebase is in constant flux, and keeping up with The Joneses is not as easy as you'd think.
+That said, it sure beats having a core engine that is bloated - there is a ton of value to doing it this way.
 :::tip
 Try to make your module as self-contained as possible.
 That means minimizing dependencies on other files that can be changed.
 :::
 ## Get Other People to Test Your Module
+Everyone's setup is different, and they probably like using stages and characters you might not care about.
+Shopping your module around to a small number of "beta" testers can go a long way.

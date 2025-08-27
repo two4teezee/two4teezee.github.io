@@ -1,0 +1,181 @@
+---
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import type { CVData } from "../types/CVMetadata";
+
+import CVEntryCard from "../components/CVEntryCard.astro";
+
+// Sample portfolio data - replace this with your actual portfolio data
+const samplePortfolioData: CVData = {
+	metadata: {
+		firstName: "two4teezee",
+		lastName: "",
+		headerQuote: ["Ikemen + Mugen Developer"],
+		awesomeColor: "#4A90E2",
+		profilePhoto: "",
+		varLanguage: "en",
+		varEntrySocietyFirst: true,
+		varDisplayLogo: true,
+		cvFooter: "",
+		letterFooter: "",
+		personalInfo: {
+			github: "two4teezee",
+			phone: "",
+			email: "",
+			linkedin: "",
+			homepage: "",
+			orcid: ""
+		}
+	},
+	bibliography: {
+		bibPath: "",
+		refStyle: ""
+	},
+	// education: [
+	// 	{
+	// 		title: "",
+	// 		engine: "",
+	// 		date: "",
+	// 		location: "",
+	// 		description: [],
+	// 		preview: "",
+	// 		logo: "",
+	// 		tags: []
+	// 	}
+	// ],
+	projects: [
+		{
+			title: "brokenMUGEN 0.99",
+            type: "Screenpack",
+			engine: "Mugen",
+			date: "2007",
+			location: "https://github.com/two4teezee",
+			description: ["Released in 2007 as a screenpack for the MUGEN fighting game engine. Included new aesthetic, combo announcer, and other features."],
+			preview: "",
+			logo: "",
+			tags: ["Game Engine", "Fighting Games", "MUGEN"]
+		},
+        {
+			title: "broken98 Lifebars",
+            type: "Lifebar",
+			engine: "Mugen",
+			date: "2007",
+			location: "https://github.com/two4teezee",
+			description: ["Released in 2007 as a community contribution to the MUGEN fighting game engine scene"],
+			preview: "",
+			logo: "",
+			tags: ["Game Engine", "Fighting Games", "MUGEN"]
+		},
+	],
+	publications: [],
+	skills: [
+		{
+			type: "Programming Languages",
+			info: ["Go", "C++", "Python", "JavaScript"]
+		},
+		{
+			type: "Game Development",
+			info: ["Game Engine Development", "Fighting Game Systems", "MUGEN/Ikemen"]
+		}
+	],
+	certificates: [],
+	//others: [
+		// {
+		// 	title: "Community Building",
+		// 	engine: "Fighting Game Community",
+		// 	date: "2007 - Present",
+		// 	location: "Various Platforms",
+		// 	description: ["Active member of the MUGEN and fighting game development community", "Sharing knowledge and helping newcomers"],
+		// 	preview: "",
+		// 	logo: "",
+		// 	tags: ["Community", "Mentorship"]
+		// }
+	//]
+};
+
+const {
+	metadata,
+	bibliography,
+	//education,
+	projects,
+	skills,
+	certificates,
+	publications,
+	//others,
+} = samplePortfolioData;
+---
+
+<MainGridLayout title="Portfolio">
+	<div class="flex w-full flex-col rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		{(projects) &&
+				<div
+						class="card-base z-10 px-9 py-6 mb-6  relative w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] ">
+					<h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Projects</h1>
+					<div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
+					<div
+							class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
+						{
+												projects.map((project) =>
+							<CVEntryCard
+									cv_entry={project}
+									class=""
+									style=""
+							>
+							</CVEntryCard>
+					)
+						}
+					</div>
+				</div>}
+		<!-- {(publications) && -->
+		<!-- <div -->
+		<!-- class="card-base z-10 px-9 py-6 mb-6 relative w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] "> -->
+		<!-- <h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Publications</h1> -->
+		<!-- <div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div> -->
+		<!-- <div -->
+		<!-- class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4"> -->
+		<!-- { -->
+		<!-- publications.map((publications) => -->
+		<!-- <CVEntryCard -->
+		<!-- cv_entry={publications} -->
+		<!-- > -->
+		<!-- </CVEntryCard> -->
+		<!-- ) -->
+		<!-- } -->
+		<!-- </div> -->
+		<!-- </div>} -->
+		<!-- {(others) &&
+				<div
+						class="card-base z-10 px-9 py-6 mb-6 relative w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] ">
+					<h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Others</h1>
+					<div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
+					<div
+							class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
+						{
+											others.map((other) =>
+							<CVEntryCard
+									cv_entry={other}
+									class=""
+									style=""
+							>
+							</CVEntryCard>
+				)
+						}
+					</div>
+				</div>} -->
+		<!-- <div class="card-base z-10 px-9 py-6 mb-6 relative w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] ">
+			<h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Education</h1>
+			<div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
+			<div class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
+				{
+								education.map((education) =>
+						<CVEntryCard
+								cv_entry={education}
+								class=""
+								style=""
+						>
+						</CVEntryCard>
+			)
+				}
+			</div>
+		</div> -->
+	</div>
+</MainGridLayout>

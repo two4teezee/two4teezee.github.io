@@ -10,3 +10,4 @@ Where I post about random stuff I'm working on, Ikemen or MUGEN stuff I'm checki
 ---
 
 Using the excellent [🍥Fuwari](https://github.com/saicaca/fuwari/) template, a static blog template built with [Astro](https://astro.build).
+Augmented by the Portfolio functionality found in [pawarherschel](https://github.com/pawarherschel/personal-website-v5) Fuwari-forked website.
