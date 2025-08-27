@@ -47,7 +47,7 @@ export interface Metadata {
 	awesomeColor: string;
 	profilePhoto: string;
 	varLanguage: string;
-	varEntrySocietyFirst: boolean;
+	varEntryEngineFirst: boolean;
 	varDisplayLogo: boolean;
 	cvFooter: string;
 	letterFooter: string;

@@ -11,7 +11,7 @@ export interface Props {
 }
 
 const { cv_entry, style = "" } = Astro.props;
-const { title, society, date, location, description, tags } = cv_entry;
+const { title, engine, date, location, description, tags } = cv_entry;
 // let {logo} = cv_entry;
 const className = Astro.props.class || "";
 
@@ -96,7 +96,7 @@ const highlight = description
         </a>
 
         <!-- metadata -->
-        <CVEntryMetadata date={date} tags={tags} society={society}
+        <CVEntryMetadata date={date} tags={tags} engine={engine}
                          class="mb-4 pr-3">
         </CVEntryMetadata>
 
