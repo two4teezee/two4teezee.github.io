@@ -85,3 +85,24 @@ mapset{map: "_pots_dramaticzoom_cfg_super"; value: 1}			# Allow zoom on super at
 
 mapset{map: "_pots_dramaticzoom_cfg_simul"; value: 1}			# Allow zoom during simul mode
 ```
+
+```zss
+[StateDef -4]
+
+ignorehitpause if !ishelper {
+
+	# Run config
+	if roundState = 0 {
+		call F_PotS_DramaticZoom_Config();
+	}
+
+	# Check attack attributes for both players
+	if movetype = A || p2movetype = A {
+		let p1_attr_normal = stateno = [200, 999] || hitdefattr = SCA, NA, NT, NP;
+		let p2_attr_normal = p2stateno = [200, 999] || p2, hitdefattr = SCA, NA, NT, NP;
+		let p1_attr_special = stateno = [1000, 2999] || hitdefattr = SCA, SA, ST, SP;
+		let p2_attr_special = p2stateno = [1000, 2999] || p2, hitdefattr = SCA, SA, ST, SP;
+		let p1_attr_super = stateno = [3000, 4999] || hitdefattr = SCA, HA, HT, HP;
+		let p2_attr_super = p2stateno = [3000, 4999] || p2, hitdefattr = SCA, HA, HT, HP;
+	}
+```
