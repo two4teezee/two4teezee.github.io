@@ -1,8 +1,7 @@
 ---
+import CVEntryCard from "../components/CVEntryCard.astro";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import type { CVData } from "../types/CVMetadata";
-
-import CVEntryCard from "../components/CVEntryCard.astro";
 
 // Sample portfolio data - replace this with your actual portfolio data
 const samplePortfolioData: CVData = {
@@ -23,12 +22,12 @@ const samplePortfolioData: CVData = {
 			email: "",
 			linkedin: "",
 			homepage: "",
-			orcid: ""
-		}
+			orcid: "",
+		},
 	},
 	bibliography: {
 		bibPath: "",
-		refStyle: ""
+		refStyle: "",
 	},
 	// education: [
 	// 	{
@@ -44,51 +43,113 @@ const samplePortfolioData: CVData = {
 	// ],
 	projects: [
 		{
-			title: "brokenMUGEN 0.99",
-            type: "Screenpack",
-			engine: "Mugen",
-			date: "2007",
-			location: "https://github.com/two4teezee",
-			description: ["Released in 2007 as a screenpack for the MUGEN fighting game engine. Included new aesthetic, combo announcer, and other features."],
-			preview: "",
+			title: "Ikemen GO Trials Mode",
+			type: "Module",
+			engine: "Ikemen GO",
+			date: "2024",
+			location: "https://github.com/two4teezee/Ikemen-GO-Trials-Mode",
+			description: [
+				"Released in 2024 as a standalone module for the Ikemen GO fighting game engine. Fully featured standalone trials mode with screenpack integration and universal trials definition files.",
+			],
+			preview: "./assets/images/bM-banner.png",
 			logo: "",
-			tags: ["Game Engine", "Fighting Games", "MUGEN"]
+			tags: ["Module", "Trials Mode", "Ikemen GO"],
 		},
-        {
-			title: "broken98 Lifebars",
-            type: "Lifebar",
+		{
+			title: "brokenMUGEN 1.0 Screenpack",
+			type: "Screenpack",
+			engine: "WinMugen",
+			date: "2014",
+			location: "https://github.com/two4teezee",
+			description: [
+				"Released in 2014 as a screenpack for the WinMUGEN fighting game engine. This released was made with the help of Saikiro and was a 640x480 release. It featured upscaled graphics and a brand new credits roll.",
+			],
+			preview: "./assets/images/bM-banner.png",
+			logo: "",
+			tags: ["Screenpack", "640x480", "MUGEN"],
+		},
+		{
+			title: "brokenMUGEN 0.99 Screenpack",
+			type: "Screenpack",
 			engine: "Mugen",
 			date: "2007",
 			location: "https://github.com/two4teezee",
-			description: ["Released in 2007 as a community contribution to the MUGEN fighting game engine scene"],
+			description: [
+				"Released in 2007 as a screenpack for the MUGEN fighting game engine. Included new aesthetic, combo announcer, and other features.",
+			],
+			preview: "./assets/images/bM-banner.png",
+			logo: "",
+			tags: ["Screenpack", "320x240", "MUGEN"],
+		},
+		{
+			title: "broken98 Lifebars",
+			type: "Lifebar",
+			engine: "Mugen",
+			date: "2007",
+			location: "https://github.com/two4teezee",
+			description: [
+				"Released in 2007 as a community contribution to the MUGEN fighting game engine scene",
+			],
 			preview: "",
 			logo: "",
-			tags: ["Game Engine", "Fighting Games", "MUGEN"]
+			tags: ["Lifebars", "320x240", "MUGEN"],
+		},
+	],
+	otherProjects: [
+		{
+			title: "Mosaic Stylizer",
+			type: "Tool",
+			engine: "html",
+			date: "2025",
+			location: "https://two4teezee.github.io/mosaic-stylizer/",
+			description: [
+				"Vibe coded app to create an aesthetic mosaic style image from a source file, completely web-based. Used for a lot of the stock images on this site!",
+			],
+			preview: "./assets/portfolio/mosaic.jpg",
+			logo: "",
+			tags: ["Tool", "Utility", "Open Source"],
+		},
+		{
+			title: "Video to GIF Converter",
+			type: "Tool",
+			engine: "html + js",
+			date: "2025",
+			location: "https://video-to-gif-vert.vercel.app/",
+			description: [
+				"Import a source video file and convert it to animated webP, webM or animated gif. Based on a variety of other repos and some vibe coding.",
+			],
+			preview: "./assets/portfolio/video2gif.jpg",
+			logo: "",
+			tags: ["Tool", "Utility", "Open Source"],
 		},
 	],
 	publications: [],
 	skills: [
 		{
 			type: "Programming Languages",
-			info: ["Go", "C++", "Python", "JavaScript"]
+			info: ["Go", "C++", "Python", "JavaScript"],
 		},
 		{
 			type: "Game Development",
-			info: ["Game Engine Development", "Fighting Game Systems", "MUGEN/Ikemen"]
-		}
+			info: [
+				"Game Engine Development",
+				"Fighting Game Systems",
+				"MUGEN/Ikemen",
+			],
+		},
 	],
 	certificates: [],
 	//others: [
-		// {
-		// 	title: "Community Building",
-		// 	engine: "Fighting Game Community",
-		// 	date: "2007 - Present",
-		// 	location: "Various Platforms",
-		// 	description: ["Active member of the MUGEN and fighting game development community", "Sharing knowledge and helping newcomers"],
-		// 	preview: "",
-		// 	logo: "",
-		// 	tags: ["Community", "Mentorship"]
-		// }
+	// {
+	// 	title: "Community Building",
+	// 	engine: "Fighting Game Community",
+	// 	date: "2007 - Present",
+	// 	location: "Various Platforms",
+	// 	description: ["Active member of the MUGEN and fighting game development community", "Sharing knowledge and helping newcomers"],
+	// 	preview: "",
+	// 	logo: "",
+	// 	tags: ["Community", "Mentorship"]
+	// }
 	//]
 };
 
@@ -97,6 +158,7 @@ const {
 	bibliography,
 	//education,
 	projects,
+	otherProjects,
 	skills,
 	certificates,
 	publications,
@@ -109,7 +171,7 @@ const {
 		{(projects) &&
 				<div
 						class="card-base z-10 px-9 py-6 mb-6  relative w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] ">
-					<h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Projects</h1>
+					<h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Mugen + Ikemen GO Projects</h1>
 					<div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
 					<div
 							class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
@@ -122,6 +184,25 @@ const {
 							>
 							</CVEntryCard>
 					)
+															}
+								</div>
+							</div>}
+		{(otherProjects) &&
+				<div
+						class="card-base z-10 px-9 py-6 mb-6  relative w-full rounded-[var(--radius-large)] bg-[var(--card-bg)] ">
+					<h1 class="text-4xl font-bold text-90 text-[var(--text-color)] mb-4 text-center">Other Projects</h1>
+					<div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div>
+					<div
+							class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4">
+						{
+											otherProjects.map((project) =>
+					<CVEntryCard
+							cv_entry={project}
+							class=""
+							style=""
+					>
+					</CVEntryCard>
+			)
 						}
 					</div>
 				</div>}

@@ -1,8 +1,9 @@
 export interface CVData {
 	metadata: Metadata;
 	certificates: Certificate[];
-    //education: Education[];
+	//education: Education[];
 	projects: Project[];
+	otherProjects: Project[];
 	publications: Publication[];
 	bibliography: Bibliography;
 	skills: Skill[];
@@ -30,7 +31,7 @@ export interface CVSkill {
 
 export interface CVEntry {
 	title: string;
-    type: string;
+	type: string;
 	engine: string;
 	date: string;
 	location: string | Location;
