@@ -1,11 +1,11 @@
 ---
-title: Dramatic Zoom Ikemen GO Add-On by PotS
+title: Dramatic Zoom Add-On by PotS - Review
 published: 2025-08-25
-description: 'A review of the Dramatic Zoom Ikemen GO Module by PotS'
-image: '/posts/dramatic-zoom/drama-thumb.webp'
+description: 'Dramatic slow motion and zoom make for some epic moments.'
+image: './drama-thumb.webp'
 tags: [Add-on, Ikemen GO, zss]
 category: 'Review'
-draft: true 
+draft: false 
 lang: ''
 ---
 
@@ -45,13 +45,18 @@ It works with all characters but it can get in the way of characters with more f
     Sorry, video not supported.
 </video>
 
-The effect gets triggered when a counter hit is imminent.
-However, the effect sometimes triggers when two characters swing at each other but both whiff, which is also really neat.
+The effect gets triggered when a counter hit is imminent, or when both characters are close to one another and action is abound.
+The effect sometimes triggers when two characters swing at each other but both whiff, which is also really neat.
 
 <video controls width="100%" autoplay muted loop>
     <source src="/posts/dramatic-zoom/drama1.webm" type="video/webm">
     Sorry, video not supported.
 </video>
+
+PotS also included BGM effects where the pitch changes to emphasize the slow motion and zoom effect.
+This is perhaps the only aspect of the add-on I didn't enjoy so much.
+While I agree that an audio effect is a nice touch, I've found the pitch change on the music to be particularly jarring.
+However, as we'll see in the next section, PotS did an amazing job making sure users can tailor the add-on to their liking, including the BGM effects!
 
 ### Diving Into the Code
 At the time of writing, PotS' Dramatic Zoom module is a lean 247 lines.
@@ -62,7 +67,7 @@ Let's take a look at some of the decisions PotS made when he developed this add-
 PotS uses maps to set values that allow to customize certain properties of the add-on and exposes them at the very start of the file to allow users to adjust them to their liking.
 This is a really smart way of making the add-on as accessible and customizable as possible.
 The set of options PotS has exposed to users is thorough and allows extensive tailoring for any custom game being developed.
-That said, all of my testing was with the default values as shown below.
+That said, my testing was with the default values as shown below, but I subsequently changed the `pitch_sound` value to `0.70` and `pitch_music` to `1.0`, which completely remedied the only qualm I had with this excellent add-on.
 
 ```zss wrap=false
 #===============================================================================
@@ -143,5 +148,11 @@ if map(_pots_dramaticzoom_cfg_slowmo) > 0
 }
 ```
 
+<video controls width="100%" autoplay muted loop>
+    <source src="/posts/dramatic-zoom/drama3.webm" type="video/webm">
+    Sorry, video not supported.
+</video>
+
 ### Conclusion
 Overall, Dramatic Zoom is an elegant implementation that provides consistent execution, great configurability, and delivers epic moments almost every match.
+I'm definitely keeping this one in my collection, kudos to PotS!
