@@ -1,17 +1,17 @@
 ---
-title: Dramatic Zoom Ikemen GO Module by PotS
+title: Dramatic Zoom Ikemen GO Add-On by PotS
 published: 2025-08-25
 description: 'A review of the Dramatic Zoom Ikemen GO Module by PotS'
 image: '/posts/dramatic-zoom/drama-thumb.webp'
-tags: [Review, Ikemen GO, zss]
-category: 'Module Review'
+tags: [Add-on, Ikemen GO, zss]
+category: 'Review'
 draft: true 
 lang: ''
 ---
 
 | Creation Information |                                                                 |                        |                         |
 | -------------------- | --------------------------------------------------------------- | ---------------------- | ----------------------- |
-| `creation`           | Dramatic Zoom for Ikemen GO                                     | `author`               | PotS                    |
+| `creation`           | Dramatic Zoom Add-On                                            | `author`               | PotS                    |
 | `creation type`      | Common State Add-On                                             | `compatibility`        | Ikemen GO Nightly Build |
 | `download link`      | [PotS's Mugen and Ikemen](https://network.mugenguild.com/pots/) | `initial release date` | 28 April 2024           |
 | `discord link`       | N/A                                                             | `forum thread`         | [MFG]()                 |
@@ -45,7 +45,7 @@ It works with all characters but it can get in the way of characters with more f
     Sorry, video not supported.
 </video>
 
-At first glance without diving into the code (we will do that later in this article!) it feels like the effect gets triggered when a counter hit is imminent.
+The effect gets triggered when a counter hit is imminent.
 However, the effect sometimes triggers when two characters swing at each other but both whiff, which is also really neat.
 
 <video controls width="100%" autoplay muted loop>
@@ -58,7 +58,11 @@ At the time of writing, PotS' Dramatic Zoom module is a lean 247 lines.
 The fact that automatic slow motion and camera zoom can be triggered universally through a common state add-on is a testament to how powerful the Ikemen GO engine can be.
 Let's take a look at some of the decisions PotS made when he developed this add-on.
 
-#### Usage of maps
+#### Available Customization Otions
+PotS uses maps to set values that allow to customize certain properties of the add-on and exposes them at the very start of the file to allow users to adjust them to their liking.
+This is a really smart way of making the add-on as accessible and customizable as possible.
+The set of options PotS has exposed to users is thorough and allows extensive tailoring for any custom game being developed.
+That said, all of my testing was with the default values as shown below.
 
 ```zss wrap=false
 #===============================================================================
@@ -86,23 +90,58 @@ mapset{map: "_pots_dramaticzoom_cfg_super"; value: 1}			# Allow zoom on super at
 mapset{map: "_pots_dramaticzoom_cfg_simul"; value: 1}			# Allow zoom during simul mode
 ```
 
-```zss
-[StateDef -4]
+#### Add-On Logic
+The add-on separates the monitoring logic in negative states and the explod generation and manipulation in `[Statedef +1]`.
+In `[Statedef -4]`, PotS deploys all of the monitoring logic for when to fire the effects, and tweak them according to the maps set at the beginning of the file.
+Based on proximity and current states, the slow motion and zoom effects trigger. 
 
-ignorehitpause if !ishelper {
-
-	# Run config
-	if roundState = 0 {
-		call F_PotS_DramaticZoom_Config();
-	}
-
-	# Check attack attributes for both players
-	if movetype = A || p2movetype = A {
-		let p1_attr_normal = stateno = [200, 999] || hitdefattr = SCA, NA, NT, NP;
-		let p2_attr_normal = p2stateno = [200, 999] || p2, hitdefattr = SCA, NA, NT, NP;
-		let p1_attr_special = stateno = [1000, 2999] || hitdefattr = SCA, SA, ST, SP;
-		let p2_attr_special = p2stateno = [1000, 2999] || p2, hitdefattr = SCA, SA, ST, SP;
-		let p1_attr_super = stateno = [3000, 4999] || hitdefattr = SCA, HA, HT, HP;
-		let p2_attr_super = p2stateno = [3000, 4999] || p2, hitdefattr = SCA, HA, HT, HP;
-	}
+```zss wrap=false
+if roundstate = 2
+	&& ID > p2, ID
+	&& ID = p2, p2, ID
+	# && facing != p2, facing # Removed because it makes it less fun
+	&& movetype = A && p2movetype = A
+	# && inguarddist && p2, inguarddist # Removed because it leaves out throws
+	&& movecontact = 0 && p2, movecontact = 0
+	&& movereversed = 0 && p2, movereversed = 0
+	# Check simul mode
+	&& (map(_pots_dramaticzoom_cfg_simul) != 0 || (teammode != Simul && p2, teammode != Simul))
+	# Life check
+	&& (100.0 * life / lifemax) <= map(_pots_dramaticzoom_cfg_life)
+	&& (100.0 * p2life / p2, lifemax) <= map(_pots_dramaticzoom_cfg_life)
+	# X Distance check
+	&& (abs(p2bodydist x) <= abs(const(size.head.pos.y) * map(_pots_dramaticzoom_cfg_distx))
+		|| abs(p2, p2bodydist x) <= abs(p2, const(size.head.pos.y) * map(_pots_dramaticzoom_cfg_distx)))
+	# Y Distance check
+	&& (abs(p2dist y) <= abs(const(size.head.pos.y) * map(_pots_dramaticzoom_cfg_disty))
+		|| abs(p2, p2dist y) <= abs(p2, const(size.head.pos.y) * map(_pots_dramaticzoom_cfg_disty)))
+	# Attack type check
+	&& (map(_pots_dramaticzoom_cfg_normal) != 0 || $p1_attr_normal = 0 || $p2_attr_normal = 0)
+	&& (map(_pots_dramaticzoom_cfg_special) != 0 || $p1_attr_special = 0 || $p2_attr_special = 0)
+	&& (map(_pots_dramaticzoom_cfg_super) != 0 || $p1_attr_super = 0 || $p2_attr_super = 0) {
+		[...]
 ```
+The zoom function uses new elements delivered in the nightly build.
+```zss
+# Zoom
+zoom{
+	scale: map(_pots_dramaticzoom_cfg_zoom);
+	pos: (pos x + p2, pos x) / 2.0,
+		max(stagevar(camera.boundhigh), (pos y + p2, pos y) / 4.0);
+	lag: 0.75;
+	stagebound: 1;
+	camerabound: 1;
+}
+```
+And the slow motion makes a smart use of `pause`:
+```zss
+# Slow motion
+if map(_pots_dramaticzoom_cfg_slowmo) > 0
+&& map(_pots_dramaticzoom) > 0 # No slow motion during the hit (-1) to not interfere with combo timing
+&& pausetime = 0 && p2, pausetime = 0 {
+	pause{time: map(_pots_dramaticzoom_cfg_slowmo)}
+}
+```
+
+### Conclusion
+Overall, Dramatic Zoom is an elegant implementation that provides consistent execution, great configurability, and delivers epic moments almost every match.
