@@ -1,25 +1,25 @@
 ---
-title: Dramatic Zoom Add-On by PotS - Review
+title: Spotlight - Dramatic Zoom Add-On by PotS
 published: 2025-08-25
 description: 'Dramatic slow motion and zoom make for some epic moments.'
 image: './drama-thumb.webp'
 tags: [Add-on, Ikemen GO, zss]
-category: 'Review'
+category: 'Spotlight - Add-on'
 draft: false 
 lang: ''
 ---
 
-| Creation Information |                                                                 |                        |                         |
-| -------------------- | --------------------------------------------------------------- | ---------------------- | ----------------------- |
-| `creation`           | Dramatic Zoom Add-On                                            | `author`               | PotS                    |
-| `creation type`      | Common State Add-On                                             | `compatibility`        | Ikemen GO Nightly Build |
-| `download link`      | [PotS's Mugen and Ikemen](https://network.mugenguild.com/pots/) | `initial release date` | 28 April 2024           |
-| `discord link`       | N/A                                                             | `forum thread`         | [MFG]()                 |
+| Creation Information    |                                                                 |                        |                         |
+| ----------------------- | --------------------------------------------------------------- | ---------------------- | ----------------------- |
+| `creation`              | Dramatic Zoom Add-On                                            | `author`               | PotS                    |
+| `creation type`         | Common State Add-On                                             | `compatibility`        | Ikemen GO Nightly Build |
+| `download link`         | [PotS's Mugen and Ikemen](https://network.mugenguild.com/pots/) | `initial release date` | 28 April 2024           |
+| `discord or forum link` | [MFG]()                                                         | `my thoughts`          | 😍                      |
 
 PotS is one of the most talented and prolific creators in the Mugen and Ikemen scene.
 He is known for his custom character styles and his overall attention to detail.
 Since joining the Ikemen scene, PotS has been very involved with developing engine features but also exploring the realm of what's possible through common state add-ons and the modules system.
-PotS has created many add-ons that I'm interested in reviewing, but the first one I'll be looking at is **Dramatic Zoom**. 
+PotS has created many add-ons that I'm interested in highlighting, but the first one I'll be looking at is **Dramatic Zoom**. 
 
 The basic premise of the Dramatic Zoom common state add-on is to emulate the slow motion and camera zoom when characters hit each other under certain conditions, like in Teken 7 and Tekken 8.
 Spoiler alert: this module is awesome, especially if you have characters that lend themselves well to this!
