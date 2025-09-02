@@ -41,7 +41,7 @@ In my testing I've found that it is best suited for characters or game-types tha
 It works with all characters but it can get in the way of characters with more frenetic and fast-paced gameplay, like anime or MvC-styled characters.
 
 <video controls width="100%" autoplay muted loop>
-    <source src="/posts/dramatic-zoom/drama2.webm" type="video/webm">
+    <source src="/posts/25-08-25-dramatic-zoom/drama2.webm" type="video/webm">
     Sorry, video not supported.
 </video>
 
@@ -49,7 +49,7 @@ The effect gets triggered when a counter hit is imminent, or when both character
 The effect sometimes triggers when two characters swing at each other but both whiff, which is also really neat.
 
 <video controls width="100%" autoplay muted loop>
-    <source src="/posts/dramatic-zoom/drama1.webm" type="video/webm">
+    <source src="/posts/25-08-25-dramatic-zoom/drama1.webm" type="video/webm">
     Sorry, video not supported.
 </video>
 
@@ -149,7 +149,7 @@ if map(_pots_dramaticzoom_cfg_slowmo) > 0
 ```
 
 <video controls width="100%" autoplay muted loop>
-    <source src="/posts/dramatic-zoom/drama3.webm" type="video/webm">
+    <source src="/posts/25-08-25-dramatic-zoom/drama3.webm" type="video/webm">
     Sorry, video not supported.
 </video>
 
