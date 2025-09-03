@@ -35,19 +35,19 @@ His small stature makes it so that you have to get in-close - Ryo2005 did a nice
 Tung doesn't have a projectile but he typically has pretty quick movement, and once you're in you can inflict quite a bit of damage in fast flurries.
 Let's take a look at the movelist that Ryo2005 gave him.
 
-| Gameplay Systems Overview     |                                       |                                                                  |
-| ----------------------------- | ------------------------------------- | ---------------------------------------------------------------- |
-| `Weak Punch`                  | X                                     | ![Tung Fu Rue Weak Punch](./tung-thumb.webp "Logo Title Text 1") |
-| `Strong Punch`                | Y                                     |                                                                  |
-| `Weak Kick`                   | A                                     |                                                                  |
-| `Strong Kick`                 | B                                     |                                                                  |
-| `Heavy Attack`                | Z                                     |                                                                  |
-| `Throw`                       | In close, f + Y or B                  | Throw with B leads to side switch                                |
-| `Dash`                        | f,f                                   |                                                                  |
-| `Backdash`                    | b,b                                   |                                                                  |
-| `Roll`                        | C or b + C                            |                                                                  |
-| `Guard Cancel - Heavy Attack` | While guarding, Z (costs 1 level)     |                                                                  |
-| `Guard Cancel - Roll`         | While guarding, b + C (costs 1 level) |                                                                  |
+| Gameplay Systems Overview     |                                       |                                   |
+| ----------------------------- | ------------------------------------- | --------------------------------- |
+| `Weak Punch`                  | :icon{name="_QCF_" ext="png" size=16 alt="QCF"}X                                     |                                   |
+| `Strong Punch`                | Y                                     |                                   |
+| `Weak Kick`                   | A                                     |                                   |
+| `Strong Kick`                 | B                                     |                                   |
+| `Heavy Attack`                | Z                                     |                                   |
+| `Throw`                       | In close, f + Y or B                  | Throw with B leads to side switch |
+| `Dash`                        | f,f                                   |                                   |
+| `Backdash`                    | b,b                                   |                                   |
+| `Roll`                        | C or b + C                            |                                   |
+| `Guard Cancel - Heavy Attack` | While guarding, Z (costs 1 level)     |                                   |
+| `Guard Cancel - Roll`         | While guarding, b + C (costs 1 level) |                                   |
 
 However, Ryo2005's King of Fighters and Rage of the Dragons-inspired gameplay has not received the same following and wide adoption that PotS' gameplay has.
 Most likely this is due to the fact that while Ryo2005's gameplay style
