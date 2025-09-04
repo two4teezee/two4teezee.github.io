@@ -117,5 +117,23 @@
         overflow-x: auto;
         margin: 1em 0;
     }
+    table th,
+    table td {
+        vertical-align: middle;
+    }
+
+    .md-table-tight table th,
+    .md-table-tight table td { vertical-align: middle; line-height: 1.0; }
+
+    .md-table-tight table th p,
+    .md-table-tight table td p { margin: 0; line-height: inherit; }
+
+    img.md-icon {
+        display: inline-block;
+        vertical-align: text-bottom;
+        line-height: 0;
+        margin: 0;
+        border-radius: 0 !important;
+    }
     
 }

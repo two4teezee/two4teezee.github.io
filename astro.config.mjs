@@ -24,10 +24,10 @@ import {
 } from "./src/plugins/expressive-code/zss-language.ts";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
+import { IconImageComponent } from "./src/plugins/rehype-component-icon.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-import { IconImageComponent } from "./src/plugins/rehype-component-icon.mjs";
 
 // https://astro.build/config
 export default defineConfig({
