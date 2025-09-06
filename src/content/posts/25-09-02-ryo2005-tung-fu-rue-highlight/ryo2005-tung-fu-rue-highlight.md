@@ -68,13 +68,13 @@ And also, check out this icon: :icon{name="_QCF2x" ext="png" size=32 alt="QCF"} 
 ### Normal and Command Normals Highlights
 
 :::div{class="md-table-move-1"}
-| Crouching Weak Kick | :icon{name="_close" ext="png" height=20 alt="QCF"} :icon{name="_HCF" ext="png" alt="HCF"} + :icon{name="_X-2" ext="png" alt="X"} |
+| Crouching Weak Kick | :icon{name="_NEAR" ext="png" height=20 alt="QCF"} :icon{name="_QCF" ext="png" alt="HCF"} + :icon{name="^X" ext="png" alt="X"} |
 |--|--:|
 | While Crouching Weak Kick is not listed in as a chainable normal, it chains into itself twice, and that can then be chained into a Command Normal. This is in contrast to the close range Weak Kick, Weak Kick, Strong Pucnh chain advertised in Ryo2005's official moveset - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/tung-thumb.webp" width="200" style="margin:0;display:block" /> 
 :::
 
 :::div{class="md-table-move-2"}
-| Far Standing Strong Kick | | :icon{name="_close" ext="png" height=20 alt="QCF"} :icon{name="_HCF" ext="png" alt="HCF"} + :icon{name="_X-2" ext="png" alt="X"} |
+| Far Standing Strong Kick | | :icon{name="_MAX" ext="png" height=20 alt="QCF"} :icon{name="_HCF" ext="png" alt="HCF"} + :icon{name="^X" ext="png" alt="X"} |
 |--|--|--:|
 | This attack has a surprising amount of range to it by propelling Tung forward into a spinning kick. With good timing, this can be use to punish whiffs and lead into big combos. It takes a bit to come out, but when you get good at using this weaved between other attacks, you can use it to great success. | <img src="/src/content/posts/25-08-23-trials-mode/trials.png" style="margin:0;display:block" /> | <img src="/src/content/posts/25-08-23-trials-mode/trials.png" style="margin:0;display:block" /> |
 :::
