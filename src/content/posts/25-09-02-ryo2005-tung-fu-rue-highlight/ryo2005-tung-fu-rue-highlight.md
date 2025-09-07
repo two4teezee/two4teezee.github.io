@@ -41,6 +41,8 @@ To drive that home, Ryo2005 gives his characters the ability to chain command no
 This often opens significant opportunities for trapping opponents down and pressing the advantage through a variety of block strings and follow-up attacks.
 For instance, Tung has a Command Normal that allows him to stay on the opponent by closing range and being relatively safe on block.
 
+
+
 The Heavy Attack and Dodge Roll buttons are used for Guard Cancel mechanics as well. 
 Using the Heavy Attack button while guarding will cost one power bar and basically triggers an Alpha Counter type attack.
 Meanwhile, using the Dodge Roll button while guarding also costs on power bar but allows the user to evade/break the block string to get in a potentially advantageous position (for instance, swapping out corner position).
@@ -64,6 +66,11 @@ His small stature makes it so that you have to get in-close - Ryo2005 did a nice
 Tung doesn't have a projectile but he typically has pretty quick movement, and once you're in you can inflict quite a bit of damage in fast flurries.
 Let's take a look at the movelist that Ryo2005 gave him.
 
+<video controls width="100%" autoplay muted loop>
+    <source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-Triplewhiff.webm" type="video/webm">
+    Sorry, video not supported.
+</video>
+
 ### Movelist
 
 :::div{class="md-table-movelist"}
@@ -80,51 +87,52 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | `Dodge Roll`                  | :icon{name="^C"} / :icon{name="_B"}:icon{name="_++"}:icon{name="^C"}                                        |                                                               |
 | `Guard Cancel - Heavy Attack` | While guarding, :icon{name="^Z"}                                                                            | Costs 1 Power Bar                                             |
 | `Guard Cancel - Roll`         | While guarding, :icon{name="_B"}:icon{name="_++"}:icon{name="^C"}                                           | Costs 1 Power Bar                                             |
-| **Command Normals**  |                                                                                                             |                                                               |
+| **Command Normals**           |                                                                                                             |                                                               |
 | `Halo Break`                  | :icon{name="_F"}:icon{name="_++"}:icon{name="^LP"}                                                          |                                                               |
 | `Descending Dragon`           | :icon{name="_DF"}:icon{name="_++"}:icon{name="^HP"}                                                         |                                                               |
 | **Special Techniques**        |                                                                                                             |                                                               |
 | `Chain Combo 1`               | :icon{name="_NEAR"}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
-| `Chain Combo 2`               | :icon{name="_CR"}:icon{name="_="}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                      |                                                               |
-| `Chain Combo 3 (unlisted)`    | :icon{name="^LP"},:icon{name="^LK"},:icon{name="^HP"}                                                       |                                                               |
+| `Chain Combo 2`               | :icon{name="_CR"}:icon{name="_="}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                      | Final attack knocks down                                      |
+| `Chain Combo 3 (unlisted)`    | :icon{name="_NEAR"}:icon{name="^LP"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
 | `Rage Combo`                  | :icon{name="^HP"}:icon{name="_++"}:icon{name="^HK"}                                                         | Uses 1 Power Bar when used to cancel normal or Command Normal |
 | `Rage Combo - Ground`         | :icon{name="^LP"},:icon{name="^HP"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"}                   |                                                               |
 | `Rage Combo - Air`            | :icon{name="~UF"},:icon{name="^LK"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"},:icon{name="^HP"} |                                                               |
-| **Special and Super Moves**   |                                                                                                             |                                                               |
-| `Tatsumaki Senpuu Kyakuu`     |                                                                                                             |                                                               |
-| `Strong Punch`                | Y                                                                                                           |                                                               |
-| `Weak Kick`                   | A                                                                                                           |                                                               |
-| `Strong Kick`                 | B                                                                                                           |                                                               |
-| `Heavy Attack`                | Z                                                                                                           |                                                               |
-| `Throw`                       | In close, f + Y or B                                                                                        | Throw with B leads to side switch                             |
-| `Dash`                        | f,f                                                                                                         |                                                               |
-| `Backdash`                    | b,b                                                                                                         |                                                               |
-| `Roll`                        | C or b + C                                                                                                  |                                                               |
-| `Guard Cancel - Heavy Attack` | While guarding, Z (costs 1 level)                                                                           |                                                               |
-| `Guard Cancel - Roll`         | While guarding, b + C (costs 1 level)                                                                       |                                                               |
+| **Special Moves**             |                                                                                                             |                                                               |
+| `Shockwave`                   | :icon{name="~B"},:icon{name="_F"}:icon{name="_++"}:icon{name="^P"}                                          |                                                               |
+| `Bamboo Punch`                | :icon{name="_QCB"}:icon{name="_++"}:icon{name="^P"}                                                         | Can be used while running                                     |
+| `Retsusenkyaku`               | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"}                                                         | Can be used while running                                     |
+| `Channeling`                  | :icon{name="_QCF"}:icon{name="_++"}:icon{name="^Z"}                                                         | :icon{name="^Z"} can be held to further channel attack        |
+| `Thunder Kick`                | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HK"}                                      |                                                               |
+| `Diving Attack`               | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HP"}                                      |                                                               |
+| `Aerial Spinning Fist`        | :icon{name="_AIR"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"}                                       |                                                               |
+| **Super Moves**               |                                                                                                             |                                                               |
+| `Whirlwind Gouken`            | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^LP"} or :icon{name="^LK"}                   | Costs 1 Power Bar                                             |
+| `Channel Super`               | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^LP"}                                      | Costs 1 Power Bar                                             |
+| `Maximum Whrilwind Gouken`    | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^HP"} or :icon{name="^HK"}                   | Costs 2 Power Bar                                             |
+| `Maximum Channel Super`       | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^HP"}                                      | Costs 2 Power Bar                                             |
 :::
 
 ### Normal and Command Normals Highlights
 
-:::div{class="md-table-move-1"}
+:::div{class="md-table-move" style="--col1:70%; --col2:30%"}
 | Crouching Weak Kick | :icon{name="_D"}:icon{name="_++"}:icon{name="^LK"} |
 |--|--:|
-| Crouching Weak Kick is a starter for Tung's best Chain Combo, and that can then be chained into a Command Normal. In contrast, Chain Combo 1 requires a close range Weak Kickas a starter, which limits its utility - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/tung-thumb.webp" width="200" style="margin:0;display:block" /> |
+| Crouching Weak Kick is a starter for Tung's best Chain Combo, and that can then be chained into a Command Normal. In contrast, Chain Combo 1 requires a close range Weak Kickas a starter, which limits its utility - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-corner.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-:::div{class="md-table-move-2"}
-| Far Standing Strong Kick | | :icon{name="_FAR"}:icon{name="^HK"} |
-|--|--|--:|
-| This attack has a surprising amount of range to it by propelling Tung forward into a spinning kick. With good timing, this can be use to punish whiffs and lead into big combos. It takes a bit to come out, but when you get good at using this weaved between other attacks, you can use it to great success. | <img src="/src/content/posts/25-08-23-trials-mode/trials.png" style="margin:0;display:block" /> | <img src="/src/content/posts/25-08-23-trials-mode/trials.png" style="margin:0;display:block" /> |
+:::div{class="md-table-move" style="--col1:75%; --col2:25%"}
+| Far Standing Strong Kick | :icon{name="_FAR"}:icon{name="^HK"} |
+|--|--:|
+| This attack has a surprising amount of range to it by propelling Tung forward into a spinning kick. With good timing, this can be use to punish whiffs and lead into big combos. It takes a bit to come out, but when you get good at using this weaved between other attacks, you can use it to great success. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/s-rh-start.webp" style="margin:0;display:block" /> |
 :::
 
-:::div{class="md-table-move-1"}
-| Jumping Strong Kick | |
-|--|--|
-| This is Tung's best normal, and it's not even close. The hitbox on this is huge and it actually has great priority - it can even cross up under the right conditions. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/tung-thumb.webp" width="200" style="margin:0;display:block" /> |
+:::div{class="md-table-move" style="--col1:70%; --col2:15%; --col3:15%"}
+| Jumping Strong Kick | | :icon{name="_AIR"}:icon{name="^HK"} |
+|--|--:|--:|
+| This is Tung's best normal, and it's not even close. The hitbox on this is huge and it actually has great priority - it can even cross up under the right conditions. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/j-rh.webp" style="margin:0;display:block" /> | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/j-rh-cup2.webp" style="margin:0;display:block" /> |
 :::
 
-<video controls width="100%" autoplay muted loop>
+<video width="100%" autoplay muted loop>
     <source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-corner.webm" type="video/webm">
     Sorry, video not supported.
 </video>
