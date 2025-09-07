@@ -122,11 +122,15 @@
         vertical-align: middle;
     }
 
-    .md-table-tight table th,
-    .md-table-tight table td { vertical-align: middle; line-height: 1.0; }
+    .md-table-movelist table th,
+    .md-table-movelist table td { vertical-align: middle; line-height: 1.0; }
 
-    .md-table-tight table th p,
-    .md-table-tight table td p { margin: 0; line-height: inherit; }
+    .md-table-movelist table th p,
+    .md-table-movelist table td p { margin: 0; line-height: inherit; }
+    .md-table-movelist th:nth-child(1), .md-table-movelist td:nth-child(1) { width: 30%; }
+    .md-table-movelist th:nth-child(2), .md-table-movelist td:nth-child(2) { width: 30%; padding-right: 0; }
+    .md-table-movelist th:nth-child(3), .md-table-movelist td:nth-child(3) { width: 40%; }
+
 
     .md-table-move-1 table { table-layout: fixed; width: 100%; }
     .md-table-move-1 th:nth-child(1), .md-table-move-1 td:nth-child(1) { width: 85%; }

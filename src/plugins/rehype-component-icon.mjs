@@ -48,7 +48,7 @@ export function IconImageComponent(properties, _children) {
 		src: url,
 		alt,
 		class: `not-prose md-icon${className ? " " + className : ""}`,
-		style: `${displayStyle}${sizeStyle}line-height:0;margin:0;${style}`,
+		style: `${displayStyle}${sizeStyle}line-height:0;${style}margin:0 !important;`,
 		loading: "lazy",
 		decoding: "async",
 	};

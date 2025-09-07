@@ -63,18 +63,57 @@ Throughout his appearances, Tung is always depicted as an elderly man in his lat
 His small stature makes it so that you have to get in-close - Ryo2005 did a nice job of giving him a kit that enables him to do that.
 Tung doesn't have a projectile but he typically has pretty quick movement, and once you're in you can inflict quite a bit of damage in fast flurries.
 Let's take a look at the movelist that Ryo2005 gave him.
-And also, check out this icon: :icon{name="_QCF2x" ext="png" size=32 alt="QCF"} + X.
+
+### Movelist
+
+:::div{class="md-table-movelist"}
+| Gameplay Systems Overview     |                                                                                                             |                                                               |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `Weak Punch`                  | :icon{name="^X"}                                                                                            |                                                               |
+| `Strong Punch`                | :icon{name="^Y"}                                                                                            |                                                               |
+| `Weak Kick`                   | :icon{name="^A"}                                                                                            |                                                               |
+| `Strong Kick`                 | :icon{name="^B"}                                                                                            |                                                               |
+| `Heavy Attack`                | :icon{name="^Z"}                                                                                            |                                                               |
+| `Throw`                       | :icon{name="_NEAR"}  :icon{name="_BF"} :icon{name="_++"}:icon{name="^B"}/:icon{name="^Y"}                   | Throw with :icon{name="^B"} leads to side switch              |
+| `Run`                         | :icon{name="_XFF"}                                                                                          |                                                               |
+| `Backdash`                    | :icon{name="_XBB"}                                                                                          |                                                               |
+| `Dodge Roll`                  | :icon{name="^C"} / :icon{name="_B"}:icon{name="_++"}:icon{name="^C"}                                        |                                                               |
+| `Guard Cancel - Heavy Attack` | While guarding, :icon{name="^Z"}                                                                            | Costs 1 Power Bar                                             |
+| `Guard Cancel - Roll`         | While guarding, :icon{name="_B"}:icon{name="_++"}:icon{name="^C"}                                           | Costs 1 Power Bar                                             |
+| **Command Normals**  |                                                                                                             |                                                               |
+| `Halo Break`                  | :icon{name="_F"}:icon{name="_++"}:icon{name="^LP"}                                                          |                                                               |
+| `Descending Dragon`           | :icon{name="_DF"}:icon{name="_++"}:icon{name="^HP"}                                                         |                                                               |
+| **Special Techniques**        |                                                                                                             |                                                               |
+| `Chain Combo 1`               | :icon{name="_NEAR"}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
+| `Chain Combo 2`               | :icon{name="_CR"}:icon{name="_="}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                      |                                                               |
+| `Chain Combo 3 (unlisted)`    | :icon{name="^LP"},:icon{name="^LK"},:icon{name="^HP"}                                                       |                                                               |
+| `Rage Combo`                  | :icon{name="^HP"}:icon{name="_++"}:icon{name="^HK"}                                                         | Uses 1 Power Bar when used to cancel normal or Command Normal |
+| `Rage Combo - Ground`         | :icon{name="^LP"},:icon{name="^HP"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"}                   |                                                               |
+| `Rage Combo - Air`            | :icon{name="~UF"},:icon{name="^LK"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"},:icon{name="^HP"} |                                                               |
+| **Special and Super Moves**   |                                                                                                             |                                                               |
+| `Tatsumaki Senpuu Kyakuu`     |                                                                                                             |                                                               |
+| `Strong Punch`                | Y                                                                                                           |                                                               |
+| `Weak Kick`                   | A                                                                                                           |                                                               |
+| `Strong Kick`                 | B                                                                                                           |                                                               |
+| `Heavy Attack`                | Z                                                                                                           |                                                               |
+| `Throw`                       | In close, f + Y or B                                                                                        | Throw with B leads to side switch                             |
+| `Dash`                        | f,f                                                                                                         |                                                               |
+| `Backdash`                    | b,b                                                                                                         |                                                               |
+| `Roll`                        | C or b + C                                                                                                  |                                                               |
+| `Guard Cancel - Heavy Attack` | While guarding, Z (costs 1 level)                                                                           |                                                               |
+| `Guard Cancel - Roll`         | While guarding, b + C (costs 1 level)                                                                       |                                                               |
+:::
 
 ### Normal and Command Normals Highlights
 
 :::div{class="md-table-move-1"}
-| Crouching Weak Kick | :icon{name="_NEAR" ext="png" height=20 alt="QCF"} :icon{name="_QCF" ext="png" alt="HCF"} + :icon{name="^X" ext="png" alt="X"} |
+| Crouching Weak Kick | :icon{name="_D"}:icon{name="_++"}:icon{name="^LK"} |
 |--|--:|
-| While Crouching Weak Kick is not listed in as a chainable normal, it chains into itself twice, and that can then be chained into a Command Normal. This is in contrast to the close range Weak Kick, Weak Kick, Strong Pucnh chain advertised in Ryo2005's official moveset - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/tung-thumb.webp" width="200" style="margin:0;display:block" /> 
+| Crouching Weak Kick is a starter for Tung's best Chain Combo, and that can then be chained into a Command Normal. In contrast, Chain Combo 1 requires a close range Weak Kickas a starter, which limits its utility - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/tung-thumb.webp" width="200" style="margin:0;display:block" /> |
 :::
 
 :::div{class="md-table-move-2"}
-| Far Standing Strong Kick | | :icon{name="_MAX" ext="png" height=20 alt="QCF"} :icon{name="_HCF" ext="png" alt="HCF"} + :icon{name="^X" ext="png" alt="X"} |
+| Far Standing Strong Kick | | :icon{name="_FAR"}:icon{name="^HK"} |
 |--|--|--:|
 | This attack has a surprising amount of range to it by propelling Tung forward into a spinning kick. With good timing, this can be use to punish whiffs and lead into big combos. It takes a bit to come out, but when you get good at using this weaved between other attacks, you can use it to great success. | <img src="/src/content/posts/25-08-23-trials-mode/trials.png" style="margin:0;display:block" /> | <img src="/src/content/posts/25-08-23-trials-mode/trials.png" style="margin:0;display:block" /> |
 :::
@@ -83,56 +122,6 @@ And also, check out this icon: :icon{name="_QCF2x" ext="png" size=32 alt="QCF"} 
 | Jumping Strong Kick | |
 |--|--|
 | This is Tung's best normal, and it's not even close. The hitbox on this is huge and it actually has great priority - it can even cross up under the right conditions. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/tung-thumb.webp" width="200" style="margin:0;display:block" /> |
-:::
-
-#### Movelist
-
-:::div{class="md-table-tight"}
-| Gameplay Systems Overview     |                                                                                                                                  |                                   |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| `Weak Punch`                  |  |                                   |
-| `Strong Punch`                | Y                                                                                                                                |                                   |
-| `Weak Kick`                   | A                                                                                                                                |                                   |
-| `Strong Kick`                 | B                                                                                                                                |                                   |
-| `Heavy Attack`                | Z                                                                                                                                |                                   |
-| `Throw`                       | In close, f + Y or B                                                                                                             | Throw with B leads to side switch |
-| `Run`                         | f,f                                                                                                                              |                                   |
-| `Backdash`                    | b,b                                                                                                                              |                                   |
-| `Roll`                        | C or b + C                                                                                                                       |                                   |
-| `Guard Cancel - Heavy Attack` | While guarding, Z (costs 1 level)                                                                                                |                                   |
-| `Guard Cancel - Roll`         | While guarding, b + C (costs 1 level)                                                                                            |                                   |
-:::
-
-:::div{class="md-table-tight"}
-| Command Normals and Other Special Techniques |                                                                                                   |                                   |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| `Weak Punch`                            | :icon{name="_close" ext="png" height=20 alt="QCF"} :icon{name="_HCF" ext="png" alt="HCF"} + :icon{name="_X-2" ext="png" alt="X"} |                                   |
-| `Strong Punch`                          | Y                                                                                                                                |                                   |
-| `Weak Kick`                             | A                                                                                                                                |                                   |
-| `Strong Kick`                           | B                                                                                                                                |                                   |
-| `Heavy Attack`                          | Z                                                                                                                                |                                   |
-| `Throw`                                 | In close, f + Y or B                                                                                                             | Throw with B leads to side switch |
-| `Dash`                                  | f,f                                                                                                                              |                                   |
-| `Backdash`                              | b,b                                                                                                                              |                                   |
-| `Roll`                                  | C or b + C                                                                                                                       |                                   |
-| `Guard Cancel - Heavy Attack`           | While guarding, Z (costs 1 level)                                                                                                |                                   |
-| `Guard Cancel - Roll`                   | While guarding, b + C (costs 1 level)                                                                                            |                                   |
-:::
-
-:::div{class="md-table-tight"}
-| Special and Super Moves       |                                                                                                                                  |                                   |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| `Weak Punch`                  | :icon{name="_close" ext="png" height=20 alt="QCF"} :icon{name="_HCF" ext="png" alt="HCF"} + :icon{name="_X-2" ext="png" alt="X"} |                                   |
-| `Strong Punch`                | Y                                                                                                                                |                                   |
-| `Weak Kick`                   | A                                                                                                                                |                                   |
-| `Strong Kick`                 | B                                                                                                                                |                                   |
-| `Heavy Attack`                | Z                                                                                                                                |                                   |
-| `Throw`                       | In close, f + Y or B                                                                                                             | Throw with B leads to side switch |
-| `Dash`                        | f,f                                                                                                                              |                                   |
-| `Backdash`                    | b,b                                                                                                                              |                                   |
-| `Roll`                        | C or b + C                                                                                                                       |                                   |
-| `Guard Cancel - Heavy Attack` | While guarding, Z (costs 1 level)                                                                                                |                                   |
-| `Guard Cancel - Roll`         | While guarding, b + C (costs 1 level)                                                                                            |                                   |
 :::
 
 <video controls width="100%" autoplay muted loop>
