@@ -1,6 +1,6 @@
 ---
 title: Spotlight - Tung Fu Rue by Ryo2005
-published: 2025-09-02
+published: 2025-09-07
 description: 'Taking a look at one of the most prolific Mugen creators.'
 image: './tung-thumb.webp'
 tags: [Character, Ryo2005, Spotlight]
@@ -36,22 +36,93 @@ While they abide by standard SNK two punches and two kicks, a fifth button is us
 The Dodge Roll mechanic is especially important to even the playing field against characters that have more movement options available to them.
 Against charaters with high movement and attack speed, you'll find yourself leveraging the Dodge Roll to great effect.
 
+<table style="margin:0;display:block;">
+    <tr>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/dodgeroll-evade-2-16by9.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/dodgeroll-evade-1-16by9.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+    </tr>
+        <tr>
+        <td colspan="2">
+            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">Use the Dodge Roll as an equalizer to characters that have better mobility or assist mechanics.</p>
+        </td>
+    </tr>
+</table>
+
 Earlier I mentioned that Ryo2005's characters tend to be pretty footsy-heavy.
 To drive that home, Ryo2005 gives his characters the ability to chain command normals from normal moves.
 This often opens significant opportunities for trapping opponents down and pressing the advantage through a variety of block strings and follow-up attacks.
 For instance, Tung has a Command Normal that allows him to stay on the opponent by closing range and being relatively safe on block.
 
-
+<table style="margin:0;display:block;">
+    <tr>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/blockstring-4by3.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/sequence-2-4by3.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">Chain Combos and chaining into Command Normals are critical tools in Ryo2005's characters' toolkits.</p>
+        </td>
+    </tr>
+</table>
 
 The Heavy Attack and Dodge Roll buttons are used for Guard Cancel mechanics as well. 
-Using the Heavy Attack button while guarding will cost one power bar and basically triggers an Alpha Counter type attack.
-Meanwhile, using the Dodge Roll button while guarding also costs on power bar but allows the user to evade/break the block string to get in a potentially advantageous position (for instance, swapping out corner position).
+Using the Heavy Attack button while guarding will cost one Power Bar and basically triggers an Alpha Counter type attack.
+This Heavy Attack Guard Cancel sends the opponent flying to the corner, which allows you to reset the engagement, but it deals minimal damage so it's not as potent as an SFA2 Alpha Counter, for example.
+Meanwhile, using the Dodge Roll button while guarding also costs one Power Bar but allows the user to evade/break the block string to get in a potentially advantageous position (for instance, swapping out corner position).
+Against attacks that have long windowns, you can use this to great effect to land big dammage!
 
-Finally, all of Ryo2005's characters have "Rage Combo", which is triggered by hitting both Strong Punch and Strong Kick at the same time.
+<table style="margin:0;display:block;">
+    <tr>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/alpha-counter-16by9.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/dodgerollcounter-16by9.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">At one Power Bar per use, the Guard Cancel moves are not cheap but they are really powerful.</p>
+        </td>
+    </tr>
+</table>
+
+Finally, all of Ryo2005's characters have a "Rage Combo" mechanic, which is triggered by hitting both Strong Punch and Strong Kick at the same time.
 Connecting with the Rage Combo attack will allow the user to input a five button combination leading to a six hit combo.
-Typically, each character has a ground and air variant of the Rage Combination - access the air version by holding up or up-forward as soon as the Rage Combination opener hits.
-The Rage Combination mechanic is very strong: it typically ends with a final attack that gives the user enough time to set up a juggle afterwards.
-Not only that, but the Rage Combination can be triggered to cancel a normal or Command Normal move to significantly extend combos - doing so will cost one power bar.
+In 4:3 screenpacks, the Rage Combo commands are visible on-screen, which is a nice, "very SNK" touch.
+On 16:9 screenpacks, the Rage Combo commands are off screen, but you're able to get them to show up if you edit the characters.
+
+Each character has a ground and air variant of the Rage Combination - access the air version by holding up or up-forward as soon as the Rage Combination opener hits.
+Not only that, but the Rage Combo can be triggered to cancel a normal or Command Normal move to significantly extend combos - doing so will cost one power bar.
+This latest point makes Rage Combo mechanic very strong: the ground variant typically ends with a final attack that gives the user enough time to set up a juggle afterwards.
+With a full Power Meter, some of Ryo2005's characters of "Touch of Death" combos, by way of using the Rage Combo mechanic.
+Tung's strongest combos are unlocked by this mechanic and he is a real threat in the corner due to the combo potential he has with this mechanic.
+
+
+<video controls width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+    <source src="/posts/25-09-02-ryo2005-tung-fu-rue/corner-combo-60fps.webm" type="video/webm">
+    Sorry, video not supported.
+</video>
 
 That covers the gameplay systems of Ryo2005's characters.
 He has done a remarkable job of creating a huge roster of characters with a homogeneous playset, with a combination of gameplay systems that allows for fun, well paced gameplay and the occasional devastating combo.
@@ -65,11 +136,6 @@ Throughout his appearances, Tung is always depicted as an elderly man in his lat
 His small stature makes it so that you have to get in-close - Ryo2005 did a nice job of giving him a kit that enables him to do that.
 Tung doesn't have a projectile but he typically has pretty quick movement, and once you're in you can inflict quite a bit of damage in fast flurries.
 Let's take a look at the movelist that Ryo2005 gave him.
-
-<video controls width="100%" autoplay muted loop>
-    <source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-Triplewhiff.webm" type="video/webm">
-    Sorry, video not supported.
-</video>
 
 ### Movelist
 
@@ -114,16 +180,16 @@ Let's take a look at the movelist that Ryo2005 gave him.
 
 ### Normal and Command Normals Highlights
 
-:::div{class="md-table-move" style="--col1:70%; --col2:30%"}
+:::div{class="md-table-move" style="--col1:60%; --col2:40%"}
 | Crouching Weak Kick | :icon{name="_D"}:icon{name="_++"}:icon{name="^LK"} |
 |--|--:|
-| Crouching Weak Kick is a starter for Tung's best Chain Combo, and that can then be chained into a Command Normal. In contrast, Chain Combo 1 requires a close range Weak Kickas a starter, which limits its utility - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-corner.webm" type="video/webm">Sorry, video not supported.</video> |
+| Crouching Weak Kick is a starter for Tung's best Chain Combo. While the last hit of the Chain Combo knocks down, it can be skipped to instead chain into a Command Normal, leading to large combos. In contrast, Chain Combo 1 requires a close range Weak Kickas a starter, which limits its utility - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/corner-combo-60fps.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-:::div{class="md-table-move" style="--col1:75%; --col2:25%"}
-| Far Standing Strong Kick | :icon{name="_FAR"}:icon{name="^HK"} |
-|--|--:|
-| This attack has a surprising amount of range to it by propelling Tung forward into a spinning kick. With good timing, this can be use to punish whiffs and lead into big combos. It takes a bit to come out, but when you get good at using this weaved between other attacks, you can use it to great success. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/s-rh-start.webp" style="margin:0;display:block" /> |
+:::div{class="md-table-move" style="--col1:50%; --col2:25%; --col3:25%"}
+| Far Standing Strong Kick | | :icon{name="_FAR"}:icon{name="^HK"} |
+|--|--|--:|
+| This attack has a surprising amount of range, propelling Tung forward into a spinning kick. It can be used to punish whiffed attacks in lieu of a jump-in. It takes a bit to come out, but when you get good at weaving this attack into your pokes, you can use it to great success. Importantly, Tung can link light normals on hit, leading to huge combo potential. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/st.rh-2-4by3.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/st.rh-1-4by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
 :::div{class="md-table-move" style="--col1:70%; --col2:15%; --col3:15%"}
@@ -133,7 +199,7 @@ Let's take a look at the movelist that Ryo2005 gave him.
 :::
 
 <video width="100%" autoplay muted loop>
-    <source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-corner.webm" type="video/webm">
+    <source src="/posts/25-09-02-ryo2005-tung-fu-rue/sequence-2-4by3.webm" type="video/webm">
     Sorry, video not supported.
 </video>
 

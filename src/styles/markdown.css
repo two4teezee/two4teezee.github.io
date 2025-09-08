@@ -134,8 +134,8 @@
     /* Generic, variable-driven version */
     .md-table-move table { table-layout: fixed; width: 100%; }
     .md-table-move th:nth-child(1), .md-table-move td:nth-child(1) { width: var(--col1, 85%); }
-    .md-table-move th:nth-child(2), .md-table-move td:nth-child(2) { width: var(--col2, 15%); }
-    .md-table-move th:nth-child(3), .md-table-move td:nth-child(3) { width: var(--col3, auto); }
+    .md-table-move th:nth-child(2), .md-table-move td:nth-child(2) { width: var(--col2, 15%); padding-right: 0; }
+    .md-table-move th:nth-child(3), .md-table-move td:nth-child(3) { width: var(--col3, auto); padding-right: 0;}
     .md-table-move th:nth-child(4), .md-table-move td:nth-child(4) { width: var(--col4, auto); }
     .md-table-move table th p,
     .md-table-move table td p { margin: 0; line-height: inherit; }
