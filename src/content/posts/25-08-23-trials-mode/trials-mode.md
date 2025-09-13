@@ -3,7 +3,7 @@ title: What I Learned By Creating the Ikemen GO Trials Mode
 published: 2025-08-23
 description: 'Random thoughts on best practices for creating Ikemen GO modules'
 image: './trials.png'
-tags: [Trials, Ikemen GO, Module]
+tags: [Trials Mode, Ikemen GO, Module]
 category: 'Rant'
 draft: false 
 lang: ''

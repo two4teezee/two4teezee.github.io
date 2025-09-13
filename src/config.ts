@@ -43,7 +43,7 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
-		
+
 		{
 			name: "Projects",
 			url: "/portfolio/", // Internal links should not include the base path, as it is automatically added
@@ -59,7 +59,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/Lily-Fighter.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/Lily-Fighter.jpeg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "two4teezee",
 	bio: "Just a dude who likes to code and play games. In 2007 I released brokenMUGEN. Now, I contribute to Ikemen GO.",
 	links: [

@@ -9,12 +9,12 @@ draft: false
 lang: ''
 ---
 
-| Creation Information    |                                                             |                 |                           |
-| ----------------------- | ----------------------------------------------------------- | --------------- | ------------------------- |
-| `creation`              | Tung Fu Rue                                                 | `author`        | Ryo2005                   |
-| `creation type`         | Character                                                   | `compatibility` | Mugne 1.0/1.1 + Ikemen GO |
-| `download link`         | [Ryo2005's Website](https://mugenskyhigh.moo.jp/index.html) | `latest update` | 05 September 2017         |
-| `discord or forum link` | Unknown                                                     | `my thoughts`   | ❤️❤️❤️                   |
+| Creation Spotlight Information |                                                             |                 |                           |
+| ------------------------------ | ----------------------------------------------------------- | --------------- | ------------------------- |
+| `creation`                     | Tung Fu Rue                                                 | `author`        | Ryo2005                   |
+| `creation type`                | Character                                                   | `compatibility` | Mugne 1.0/1.1 + Ikemen GO |
+| `download link`                | [Ryo2005's Website](https://mugenskyhigh.moo.jp/index.html) | `latest update` | 05 September 2017         |
+| `discord or forum link`        | Unknown                                                     | `my thoughts`   | 👴🏻 = ❤️❤️❤️              |
 
 Ryo2005 is one of the great Mugen creators from Japan.
 He has continuously been releasing characters and stages since 2009 and is still active in 2025.
@@ -128,13 +128,14 @@ That covers the gameplay systems of Ryo2005's characters.
 He has done a remarkable job of creating a huge roster of characters with a homogeneous playset, with a combination of gameplay systems that allows for fun, well paced gameplay and the occasional devastating combo.
 With that out of the way, let's talk about Tung Fu Rue.
 
-### An Intro to Tung Fu Rue
+### About Tung Fu Rue
 Tung Fu Rue is not the most popular character in the SNK universe, but he's been around for quite a while.
-He made his first appearance in the first Fatal Fury game, and periodically been brought back - the sprites Ryo2005 used are from Neo Geo Battle Coliseum.
+He made his first appearance in the Fatal Fury 1, and periodically has been brought back - the sprites Ryo2005 used are a mix primarily pulled from Real Bout Fatal Fury 2.
 In Fatal Fury 1, he was introduced as the legendary master of the style known as Hakkyokuseiken and as the man responsible for training several of the series' main characters, like Andy Bogard.
 Throughout his appearances, Tung is always depicted as an elderly man in his late 60s to early 80s and I've always found that entertaining.
 His small stature makes it so that you have to get in-close - Ryo2005 did a nice job of giving him a kit that enables him to do that.
-Tung doesn't have a projectile but he typically has pretty quick movement, and once you're in you can inflict quite a bit of damage in fast flurries.
+Tung doesn't have a true projectile but he has tools to gap-close, and once you're in you can inflict quite a bit of damage in fast flurries.
+His corner combos are particularly devastating.
 Let's take a look at the movelist that Ryo2005 gave him.
 
 ### Movelist
@@ -154,8 +155,8 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | `Guard Cancel - Heavy Attack` | While guarding, :icon{name="^Z"}                                                                            | Costs 1 Power Bar                                             |
 | `Guard Cancel - Roll`         | While guarding, :icon{name="_B"}:icon{name="_++"}:icon{name="^C"}                                           | Costs 1 Power Bar                                             |
 | **Command Normals**           |                                                                                                             |                                                               |
-| `Halo Break`                  | :icon{name="_F"}:icon{name="_++"}:icon{name="^LP"}                                                          |                                                               |
-| `Descending Dragon`           | :icon{name="_DF"}:icon{name="_++"}:icon{name="^HP"}                                                         |                                                               |
+| `Kourin Satsu`                | :icon{name="_F"}:icon{name="_++"}:icon{name="^LP"}                                                          |                                                               |
+| `Ukouryuu`                    | :icon{name="_DF"}:icon{name="_++"}:icon{name="^HP"}                                                         |                                                               |
 | **Special Techniques**        |                                                                                                             |                                                               |
 | `Chain Combo 1`               | :icon{name="_NEAR"}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
 | `Chain Combo 2`               | :icon{name="_CR"}:icon{name="_="}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                      | Final attack knocks down                                      |
@@ -164,44 +165,95 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | `Rage Combo - Ground`         | :icon{name="^LP"},:icon{name="^HP"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"}                   |                                                               |
 | `Rage Combo - Air`            | :icon{name="~UF"},:icon{name="^LK"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"},:icon{name="^HP"} |                                                               |
 | **Special Moves**             |                                                                                                             |                                                               |
-| `Shockwave`                   | :icon{name="~B"},:icon{name="_F"}:icon{name="_++"}:icon{name="^P"}                                          |                                                               |
-| `Bamboo Punch`                | :icon{name="_QCB"}:icon{name="_++"}:icon{name="^P"}                                                         | Can be used while running                                     |
-| `Retsusenkyaku`               | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"}                                                         | Can be used while running                                     |
-| `Channeling`                  | :icon{name="_QCF"}:icon{name="_++"}:icon{name="^Z"}                                                         | :icon{name="^Z"} can be held to further channel attack        |
-| `Thunder Kick`                | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HK"}                                      |                                                               |
-| `Diving Attack`               | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HP"}                                      |                                                               |
-| `Aerial Spinning Fist`        | :icon{name="_AIR"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"}                                       |                                                               |
+| `Shou Ha`                     | :icon{name="~B"},:icon{name="_F"}:icon{name="_++"}:icon{name="^P"}                                          |                                                               |
+| `Sen Shippo`                  | :icon{name="_QCB"}:icon{name="_++"}:icon{name="^P"}                                                         | Can be used while running                                     |
+| `Ressen Kyaku`                | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"}                                                         | Can be used while running                                     |
+| `Geki Hou`                    | :icon{name="_QCF"}:icon{name="_++"}:icon{name="^Z"}                                                         | :icon{name="^Z"} can be held to further channel attack        |
+| `Raimeikyaku`                 | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HK"}                                      |                                                               |
+| `Juujiken`                    | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HP"}                                      |                                                               |
+| `Senpuuken`                   | :icon{name="_AIR"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"}                                       |                                                               |
 | **Super Moves**               |                                                                                                             |                                                               |
-| `Whirlwind Gouken`            | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^LP"} or :icon{name="^LK"}                   | Costs 1 Power Bar                                             |
-| `Channel Super`               | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^LP"}                                      | Costs 1 Power Bar                                             |
-| `Maximum Whrilwind Gouken`    | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^HP"} or :icon{name="^HK"}                   | Costs 2 Power Bar                                             |
-| `Maximum Channel Super`       | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^HP"}                                      | Costs 2 Power Bar                                             |
+| `Senpuu Gouken`               | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^LP"} or :icon{name="^LK"}                   | Costs 1 Power Bar                                             |
+| `Dai Geki Hou`                | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^LP"}                                      | Costs 1 Power Bar                                             |
+| `Maximum Senpuu Gouken`       | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^HP"} or :icon{name="^HK"}                   | Costs 2 Power Bar                                             |
+| `Maximum Dai Geki Hou`        | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^HP"}                                      | Costs 2 Power Bar                                             |
 :::
 
-### Normal and Command Normals Highlights
+#### Movelist Highlights
 
-:::div{class="md-table-move" style="--col1:60%; --col2:40%"}
-| Crouching Weak Kick | :icon{name="_D"}:icon{name="_++"}:icon{name="^LK"} |
-|--|--:|
-| Crouching Weak Kick is a starter for Tung's best Chain Combo. While the last hit of the Chain Combo knocks down, it can be skipped to instead chain into a Command Normal, leading to large combos. In contrast, Chain Combo 1 requires a close range Weak Kickas a starter, which limits its utility - Tung doesn't have to be very close for this to work and he can leverage the gap-closing Halo Break Command Normal to turn a quick poke into an offensive blockstring. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/corner-combo-60fps.webm" type="video/webm">Sorry, video not supported.</video> |
-:::
-
-:::div{class="md-table-move" style="--col1:50%; --col2:25%; --col3:25%"}
-| Far Standing Strong Kick | | :icon{name="_FAR"}:icon{name="^HK"} |
+:::div{class="md-table-move" style="--col1:60%; --col2:20%; --col3:20%;"}
+| Crouching Weak and Strong Kicks | | :icon{name="_D"}:icon{name="_++"}:icon{name="^LK"} / :icon{name="^HK"}|
 |--|--|--:|
-| This attack has a surprising amount of range, propelling Tung forward into a spinning kick. It can be used to punish whiffed attacks in lieu of a jump-in. It takes a bit to come out, but when you get good at weaving this attack into your pokes, you can use it to great success. Importantly, Tung can link light normals on hit, leading to huge combo potential. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/st.rh-2-4by3.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/st.rh-1-4by3.webm" type="video/webm">Sorry, video not supported.</video> |
+| Crouching Weak Kick is a starter for Tung's best Chain Combo. While the last hit of the Chain Combo knocks down, it can be skipped to instead chain into a Command Normal, leading to large combos. It is slightly preferable to Tung's other Chain Combo that requires a Close Standing Light Kick to start. Crouching Strong Kick offers a hard knockdown, but will also often fit Tung under high or even mid hitting attacks. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/c.lk-1by1.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/c.rh-1by1-60fps.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-:::div{class="md-table-move" style="--col1:70%; --col2:15%; --col3:15%"}
+:::div{class="md-table-move" style="--col1:25%; --col2:75%;"}
+| Far Standing Strong Kick | :icon{name="_FAR"}:icon{name="^HK"} |
+|--|--:|
+| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/s.rh-4by3.webm" type="video/webm">Sorry, video not supported.</video> | This attack has surprising range, propelling Tung forward into a spinning kick. It can be used to punish whiffed attacks in lieu of a jump-in. It takes a bit to come out, but when you get good at weaving this attack into your pokes, you can use it to great success. Importantly, Tung can link light normals on hit, leading to huge combo potential. For instace, Tung can link from :icon{name="_FAR"}:icon{name="^HK"} into :icon{name="_NEAR"}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}, Rage Combo activation :icon{name="^HP"}:icon{name="_++"}:icon{name="^HK"}, :icon{name="^LP"},:icon{name="^HP"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"}, into Senpuu Gouken :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^LP"} dealing nearly half of your opponent's lifebar for two Power Bars. | 
+:::
+
+:::div{class="md-table-move" style="--col1:75%; --col2:25%;"}
 | Jumping Strong Kick | | :icon{name="_AIR"}:icon{name="^HK"} |
-|--|--:|--:|
-| This is Tung's best normal, and it's not even close. The hitbox on this is huge and it actually has great priority - it can even cross up under the right conditions. | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/j-rh.webp" style="margin:0;display:block" /> | <img src="/src/content/posts/25-09-02-ryo2005-tung-fu-rue-highlight/j-rh-cup2.webp" style="margin:0;display:block" /> |
+|--|--|--:|
+| This is Tung's best normal attack, and it's not even close. The hitbox on this is huge and it actually has great priority. You can easily use this as a cross up as well. It often beats out other air normals, and it will trade with some anti-airs. It's his best button - use it. It's also very positive on hit, leading to very lenient timing on combos. You can hit an opponent relatively early and land into a Close Standing Light Kick to launch into a chain combo. If you are not contested on your jump-in, this will lead to a blockstring at a minimum. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/sequence-2-4by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-<video width="100%" autoplay muted loop>
-    <source src="/posts/25-09-02-ryo2005-tung-fu-rue/sequence-2-4by3.webm" type="video/webm">
-    Sorry, video not supported.
-</video>
+:::div{class="md-table-move" style="--col1:15%; --col2:85%;"}
+| Kourin Satsu | :icon{name="_F"}:icon{name="_++"}:icon{name="^LP"} |
+|--|--:|
+| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/halobreak-2-1by1.webm" type="video/webm">Sorry, video not supported.</video> | This command normal has a big hitbox and makes Tung take a step forward. This can be cancelled into a special move or super as appropriate. An interesting property of Kourin Satsu is that if it is not cancelled into a special or super, Tung will actually step back into the position he originally executed the move from. You can use this to great effect by delaying the timing on the cancel, or flowing back into a second blockstring with Crouching Light Kick, for instace. |
+:::
 
-However, Ryo2005's King of Fighters and Rage of the Dragons-inspired gameplay has not received the same following and wide adoption that PotS' gameplay has.
-Most likely this is due to the fact that while Ryo2005's gameplay style
+:::div{class="md-table-move" style="--col1:70%; --col2:30%;"}
+| Shou Ha | :icon{name="~B"},:icon{name="_F"}:icon{name="_++"}:icon{name="^P"} |
+|--|--:|
+| Tung's only charge move, but the charge period is very short (maybe one second?). The light version is short range and actually a decent anti-air if the enemy is telegraphing enough. However, the strong version is completely different, with a longer wind-up period and full screen range. Use this to punish or keep your opponent honest if they're doing some shenanigans thinking they are safe. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/strong-shockwave-16by9.webm" type="video/webm">Sorry, video not supported.</video> |
+:::
+
+:::div{class="md-table-move" style="--col1:40%; --col2:60%;"}
+| Sen Shippo | :icon{name="_QCB"}:icon{name="_++"}:icon{name="^P"} |
+|--|--:|
+| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/Tung-Triplewhiff.webm" type="video/webm">Sorry, video not supported.</video> | Sen Shippo is Tung's famous lunge punch attack. It has a small start up window that still allows it to be combo'd into. It can be used to punish whiffs in neutral. As a matter of fact, Senshippo make Tung tkae a tiny step back during the startup animation which can actually lead to your opponent's attack that might have been at max range to now whiff, with proper timing. Senshippo knocksdown and typically leaves Tung relatively close to the enemy, leading to good pressure options. |
+:::
+
+:::div{class="md-table-move" style="--col1:80%; --col2:20%;"}
+| Ressen Kyaku | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"} |
+|--|--:|
+| This special move has good priority against all jump-ins but it lacks invincibility frames, therefore making it a poor reversal option. Frankly, the lack of reversal options on wake up is probably Tung's biggest weakness. Back to Retsusenkyaku, it is an important move for countering jump-ins but also as your best option as a follow-up to the ground Rage Combo, which can lead to Tung's most devastating combos. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> |
+:::
+
+### Combos and Trials
+My plan for every character creation spotlight I do is to create a Trials definition file to be used with the [Ikemen GO Trials Mode module](https://github.com/two4teezee/Ikemen-GO-Trials-Mode) I worked on. 
+If you want to give it a go, take a look [here](https://github.com/two4teezee/Ikemen-GO-Sample-Trials-Definition-Files).
+You can see some of the trials in the clips below.
+
+<table style="margin:0;display:block;">
+    <tr>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/alpha-counter-16by9.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+        <td style="width=50%">
+            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/dodgerollcounter-16by9.webm" type="video/webm"> Sorry, video not supported.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">Trials X and Y in the Trials definition file I created for Ryo2005's Tung Fu Rue.</p>
+        </td>
+    </tr>
+</table>
+
+### Final Thoughts
+Ryo2005's characters are some of my favorite Mugen creations ever.
+I like the simplicity of the gameplay systems and the hybrid approach to remixing existing systems and characters while also remaining relatively grounded.
+Ryo2005's Tung Fu Rue is a great example of this character and gameplay design philosophy, where the key strengths and weaknesses of Tung have been preserved, magnified, and tweaked to provide a compelling experience.
+The implementation is tight, the controls are quite good, and Tung is a really fun character to use.
+That said, there are some flaws.
+For instance, the lack of a reversal move, or a sufficient input window on wake-up, really hampers the use of Tung in some rosters.
+Without meter to use one of his Guard Cancel techniques, he simply cannot deal with characters that put on constant pressure.
+Overall, I highly recommend Tung Fu Rue by Ryo2005.
