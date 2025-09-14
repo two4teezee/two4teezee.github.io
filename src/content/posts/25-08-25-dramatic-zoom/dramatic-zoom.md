@@ -1,10 +1,10 @@
 ---
-title: Spotlight - Dramatic Zoom Add-On by PotS
+title: 'Spotlight: Dramatic Zoom Add-On by PotS'
 published: 2025-08-25
 description: 'Dramatic slow motion and zoom make for some epic moments.'
 image: './drama-thumb.webp'
 tags: [Add-on, Ikemen GO, PotS]
-category: 'Spotlight - Add-on'
+category: 'Spotlight: Add-on'
 draft: false 
 lang: ''
 ---

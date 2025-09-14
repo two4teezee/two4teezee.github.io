@@ -1,10 +1,10 @@
 ---
-title: Spotlight - Tung Fu Rue by Ryo2005
-published: 2025-09-07
+title: 'Spotlight: Tung Fu Rue by Ryo2005'
+published: 2025-09-14
 description: 'Taking a look at one of the most prolific Mugen creators.'
 image: './tung-thumb.webp'
 tags: [Character, Ryo2005, Spotlight]
-category: 'Spotlight - Character'
+category: 'Spotlight: Character'
 draft: false 
 lang: ''
 ---
@@ -119,7 +119,7 @@ With a full Power Meter, some of Ryo2005's characters of "Touch of Death" combos
 Tung's strongest combos are unlocked by this mechanic and he is a real threat in the corner due to the combo potential he has with this mechanic.
 
 
-<video controls width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+<video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
     <source src="/posts/25-09-02-ryo2005-tung-fu-rue/corner-combo-60fps.webm" type="video/webm">
     Sorry, video not supported.
 </video>
@@ -173,9 +173,9 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | `Juujiken`                    | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^HP"}                                      |                                                               |
 | `Senpuuken`                   | :icon{name="_AIR"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"}                                       |                                                               |
 | **Super Moves**               |                                                                                                             |                                                               |
-| `Senpuu Gouken`               | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^LP"} or :icon{name="^LK"}                   | Costs 1 Power Bar                                             |
+| `Senpuu Gouken`               | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^LP"} or :icon{name="^LK"}                   | Costs 1 Power Bar; punch version is stationary and kick version advances Tung towards opponent.                                              |
 | `Dai Geki Hou`                | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^LP"}                                      | Costs 1 Power Bar                                             |
-| `Maximum Senpuu Gouken`       | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^HP"} or :icon{name="^HK"}                   | Costs 2 Power Bar                                             |
+| `Maximum Senpuu Gouken`       | :icon{name="_F"}:icon{name="_HCF"}:icon{name="_++"}:icon{name="^HP"} or :icon{name="^HK"}                   | Costs 2 Power Bar; punch version is stationary and kick version advances Tung towards opponent.                                             |
 | `Maximum Dai Geki Hou`        | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^HP"}                                      | Costs 2 Power Bar                                             |
 :::
 
@@ -206,7 +206,7 @@ Let's take a look at the movelist that Ryo2005 gave him.
 :::
 
 :::div{class="md-table-move" style="--col1:70%; --col2:30%;"}
-| Shou Ha | :icon{name="~B"},:icon{name="_F"}:icon{name="_++"}:icon{name="^P"} |
+| Shou Ha | :icon{name="~B"}:icon{name="_F"}:icon{name="_++"}:icon{name="^P"} |
 |--|--:|
 | Tung's only charge move, but the charge period is very short (maybe one second?). The light version is short range and actually a decent anti-air if the enemy is telegraphing enough. However, the strong version is completely different, with a longer wind-up period and full screen range. Use this to punish or keep your opponent honest if they're doing some shenanigans thinking they are safe. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/strong-shockwave-16by9.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
@@ -220,30 +220,38 @@ Let's take a look at the movelist that Ryo2005 gave him.
 :::div{class="md-table-move" style="--col1:80%; --col2:20%;"}
 | Ressen Kyaku | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"} |
 |--|--:|
-| This special move has good priority against all jump-ins but it lacks invincibility frames, therefore making it a poor reversal option. Frankly, the lack of reversal options on wake up is probably Tung's biggest weakness. Back to Retsusenkyaku, it is an important move for countering jump-ins but also as your best option as a follow-up to the ground Rage Combo, which can lead to Tung's most devastating combos. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> |
+| This special move has good priority against all jump-ins but it lacks invincibility frames, therefore making it a poor reversal option. Frankly, the lack of reversal options on wake up is probably Tung's biggest weakness. Back to Retsusenkyaku, it is an important move for countering jump-ins but also as your best option as a follow-up to the ground Rage Combo, which can lead to Tung's most devastating combos. Notably, the light version can be followed up by the heavy version in the corner, leading to big damage even without meter to spend. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-### Combos and Trials
-My plan for every character creation spotlight I do is to create a Trials definition file to be used with the [Ikemen GO Trials Mode module](https://github.com/two4teezee/Ikemen-GO-Trials-Mode) I worked on. 
-If you want to give it a go, take a look [here](https://github.com/two4teezee/Ikemen-GO-Sample-Trials-Definition-Files).
-You can see some of the trials in the clips below.
+:::div{class="md-table-move" style="--col1:60%; --col2:20%; --col3:20%"}
+| Dai Geki Hou | | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"} |
+|--|--|--:|
+| This is probably Tung's best super. It has a surprising amount of range, it has good priority, and it does good damage. You can use this super in the corner for huge damage - most of Tung's most damaging combos use this super to great effect. Based on the hitbox, you can use it to juggle enemies that have nearly fallen to the floor and the super will pick them up to score all hits. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> |
+:::
+
+### Trials
+As a way of giving back, every character creation spotlight on my website will be accompanied by a Trials definition file to be used with the [Ikemen GO Trials Mode module](https://github.com/two4teezee/Ikemen-GO-Trials-Mode).
+I'll do this no matter how new or old the character I'm spotlighting is. 
+Tung has some pretty cool tech that can turn the fight in your favor in a hurry, especially if you have meter to spend.
+If you want to give it Trials Mode a go with Ryo2005's Tung Fu Rue, take a look [here](https://github.com/two4teezee/Ikemen-GO-Sample-Trials-Definition-Files).
+You can see a couple of examples from Tung's Trials below.
 
 <table style="margin:0;display:block;">
     <tr>
         <td style="width=50%">
             <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
-                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/alpha-counter-16by9.webm" type="video/webm"> Sorry, video not supported.
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/corner-combo-2.webm" type="video/webm"> Sorry, video not supported.
             </video>
         </td>
         <td style="width=50%">
             <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
-                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/dodgerollcounter-16by9.webm" type="video/webm"> Sorry, video not supported.
+                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/final_combo.webm" type="video/webm"> Sorry, video not supported.
             </video>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">Trials X and Y in the Trials definition file I created for Ryo2005's Tung Fu Rue.</p>
+            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">The two final trials in the Trials definition file I created for Ryo2005's Tung Fu Rue.</p>
         </td>
     </tr>
 </table>
