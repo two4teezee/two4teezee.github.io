@@ -1,0 +1,49 @@
+<script src="https://giscus.app/client.js"
+        data-repo="two4teezee/two4teezee.github.io"
+        data-repo-id="R_kgDOPjFc9A"
+        data-category="Post-Comments"
+        data-category-id="DIC_kwDOPjFc9M4CvhCj"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script is:inline>
+// Keep Giscus theme in sync with site's light/dark mode without extra CSS
+(function () {
+    const getTheme = () => document.documentElement.classList.contains("dark") ? "gruvbox_dark" : "light";
+
+    function setGiscusTheme() {
+        const iframe = document.querySelector("iframe.giscus-frame");
+        if (!iframe) return;
+        iframe.contentWindow?.postMessage(
+            { giscus: { setConfig: { theme: getTheme() } } },
+            "https://giscus.app",
+        );
+    }
+
+    // Apply once when Giscus is ready
+    window.addEventListener("message", (event) => {
+        if (event.origin !== "https://giscus.app") return;
+        if (event.data?.giscus) setGiscusTheme();
+    });
+
+    // React to site theme toggles: observe html class changes
+    const observer = new MutationObserver(() => setGiscusTheme());
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+    // React to system scheme changes when in auto mode
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    media.addEventListener("change", () => setGiscusTheme());
+
+    // Fallback attempt shortly after load
+    window.addEventListener("DOMContentLoaded", () => setTimeout(setGiscusTheme, 0));
+})();
+</script>
