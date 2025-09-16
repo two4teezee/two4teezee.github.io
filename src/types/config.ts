@@ -1,5 +1,5 @@
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
-import type * as Giscus from "giscus";
+import type Giscus from "giscus";
 
 export type SiteConfig = {
 	title: string;
