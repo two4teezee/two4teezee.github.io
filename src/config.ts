@@ -1,5 +1,4 @@
 import type {
-	CommentConfig,
 	ExpressiveCodeConfig,
 	LicenseConfig,
 	NavBarConfig,
@@ -94,21 +93,4 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
 	// Please select a dark theme, as this blog theme currently only supports dark background color
 	theme: "github-dark",
-};
-
-export const commentConfig: CommentConfig = {
-	giscus: {
-		repo: "two4teezee/two4teezee.github.io",
-		repoId: "R_kgDOPjFc9A",
-		category: "Announcements",
-		categoryId: "DIC_kwDOPjFc9M4Cvfsa",
-		mapping: "pathname",
-		strict: "0",
-		reactionsEnabled: "1",
-		emitMetadata: "1",
-		inputPosition: "top",
-		theme: "dark",
-		lang: "eng",
-		loading: "lazy",
-	},
 };
