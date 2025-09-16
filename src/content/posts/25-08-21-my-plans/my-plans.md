@@ -4,7 +4,7 @@ published: 2025-08-21
 description: 'A small post to explain what I intend to do with this website.'
 image: './bM.png'
 tags: []
-category: 'src\assets\images\Lily-Fighter.jpeg'
+category: 'Blog'
 draft: false 
 lang: ''
 ---
