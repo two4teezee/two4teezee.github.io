@@ -13,5 +13,3 @@ A new update for the Ikemen GO Trials Mode, now revved to [v0.99.3](https://gith
 This update introduces a simple hotfix to prevent crashing if the user is partway through a trial, pauses, and switches trials using the pause menu options.
 Updating is recommended and will not be breaking to your implementation.
 Enjoy!
-
-::github{repo="two4teezee/Ikemen-GO-Trials-Mode"}
