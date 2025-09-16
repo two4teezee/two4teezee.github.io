@@ -256,6 +256,8 @@ You can see a couple of examples from Tung's Trials below.
     </tr>
 </table>
 
+::github{repo="two4teezee/Ikemen-GO-Trials-Mode"}
+
 ### Final Thoughts
 Ryo2005's characters are some of my favorite Mugen creations ever.
 I like the simplicity of the gameplay systems and the hybrid approach to remixing existing systems and characters while also remaining relatively grounded.
