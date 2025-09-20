@@ -230,7 +230,7 @@ Tung has some pretty cool tech that can turn the fight in your favor in a hurry,
 If you want to give it Trials Mode a go with Ryo2005's Tung Fu Rue, take a look [here](https://github.com/two4teezee/Ikemen-GO-Sample-Trials-Definition-Files).
 You can watch me struggle through Tung's Trials (that I created, mind you) below.
 
-<iframe width="100%" src="https://youtu.be/UZulPQ7Xf7A" title="Ikemen GO Trials Mode - Tung Fu Rue by Ryo2005" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="468" src="https://www.youtube.com/embed/UZulPQ7Xf7A?si=a5dkAIgSVyxciOy6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Final Thoughts
 Ryo2005's characters are some of my favorite Mugen creations ever.
