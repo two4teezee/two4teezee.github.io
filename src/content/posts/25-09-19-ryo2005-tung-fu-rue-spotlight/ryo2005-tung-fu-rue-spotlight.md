@@ -194,8 +194,8 @@ Let's take a look at the movelist that Ryo2005 gave him.
 :::
 
 :::div{class="md-table-move" style="--col1:75%; --col2:25%;"}
-| Jumping Strong Kick | | :icon{name="_AIR"}:icon{name="^HK"} |
-|--|--|--:|
+| Jumping Strong Kick | :icon{name="_AIR"}:icon{name="^HK"} |
+|--|--:|
 | This is Tung's best normal attack, and it's not even close. The hitbox on this is huge and it actually has great priority. You can easily use this as a cross up as well. It often beats out other air normals, and it will trade with some anti-airs. It's his best button - use it. It's also very positive on hit, leading to very lenient timing on combos. You can hit an opponent relatively early and land into a Close Standing Light Kick to launch into a chain combo. If you are not contested on your jump-in, this will lead to a blockstring at a minimum. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/sequence-2-4by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
@@ -237,9 +237,11 @@ Ryo2005's characters are some of my favorite Mugen creations ever.
 I like the simplicity of the gameplay systems and the hybrid approach to remixing existing systems and characters while also remaining relatively grounded.
 Ryo2005's Tung Fu Rue is a great example of this character and gameplay design philosophy, where the key strengths and weaknesses of Tung have been preserved, magnified, and tweaked to provide a compelling experience.
 The implementation is tight, the controls are quite good, and Tung is a really fun character to use.
+
 That said, there are some flaws.
 For instance, the lack of a reversal move, or a sufficient input window on wake-up, really hampers the use of Tung in some rosters.
 Without meter to use one of his Guard Cancel techniques, he simply cannot deal with characters that put on constant pressure.
 But, don't let that steer you away from this awesome character.
+
 Ryo2005's characters in general are awesome, and Tung is a good example of his work.
 He is a straightforward character with a lot of interesting options in neutral, some cool combos, and tools that allow him to navigate most situations.
