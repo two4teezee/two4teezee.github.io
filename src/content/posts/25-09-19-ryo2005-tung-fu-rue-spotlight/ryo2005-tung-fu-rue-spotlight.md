@@ -1,6 +1,6 @@
 ---
 title: 'Spotlight: Tung Fu Rue by Ryo2005'
-published: 2025-09-14
+published: 2025-09-19
 description: 'Taking a look at one of the most prolific Mugen creators.'
 image: './tung-thumb.webp'
 tags: [Character, Ryo2005, Spotlight]
@@ -148,7 +148,7 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | `Weak Kick`                   | :icon{name="^A"}                                                                                            |                                                               |
 | `Strong Kick`                 | :icon{name="^B"}                                                                                            |                                                               |
 | `Heavy Attack`                | :icon{name="^Z"}                                                                                            |                                                               |
-| `Throw`                       | :icon{name="_NEAR"}  :icon{name="_BF"} :icon{name="_++"}:icon{name="^B"}/:icon{name="^Y"}                   | Throw with :icon{name="^B"} leads to side switch              |
+| `Throw`                       | :icon{name="_CLOSE"}  :icon{name="_BF"} :icon{name="_++"}:icon{name="^B"}/:icon{name="^Y"}                   | Throw with :icon{name="^B"} leads to side switch              |
 | `Run`                         | :icon{name="_XFF"}                                                                                          |                                                               |
 | `Backdash`                    | :icon{name="_XBB"}                                                                                          |                                                               |
 | `Dodge Roll`                  | :icon{name="^C"} / :icon{name="_B"}:icon{name="_++"}:icon{name="^C"}                                        |                                                               |
@@ -158,9 +158,9 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | `Kourin Satsu`                | :icon{name="_F"}:icon{name="_++"}:icon{name="^LP"}                                                          |                                                               |
 | `Ukouryuu`                    | :icon{name="_DF"}:icon{name="_++"}:icon{name="^HP"}                                                         |                                                               |
 | **Special Techniques**        |                                                                                                             |                                                               |
-| `Chain Combo 1`               | :icon{name="_NEAR"}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
-| `Chain Combo 2`               | :icon{name="_CR"}:icon{name="_="}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                      | Final attack knocks down                                      |
-| `Chain Combo 3 (unlisted)`    | :icon{name="_NEAR"}:icon{name="^LP"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
+| `Chain Combo 1`               | :icon{name="_CLOSE"}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
+| `Chain Combo 2`               | :icon{name="_CROUCH"}:icon{name="_="}:icon{name="^LK"},:icon{name="^LK"},:icon{name="^HP"}                      | Final attack knocks down                                      |
+| `Chain Combo 3 (unlisted)`    | :icon{name="_CLOSE"}:icon{name="^LP"},:icon{name="^LK"},:icon{name="^HP"}                                    |                                                               |
 | `Rage Combo`                  | :icon{name="^HP"}:icon{name="_++"}:icon{name="^HK"}                                                         | Uses 1 Power Bar when used to cancel normal or Command Normal |
 | `Rage Combo - Ground`         | :icon{name="^LP"},:icon{name="^HP"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"}                   |                                                               |
 | `Rage Combo - Air`            | :icon{name="~UF"},:icon{name="^LK"},:icon{name="^HK"},:icon{name="^LK"},:icon{name="^HP"},:icon{name="^HP"} |                                                               |
@@ -223,38 +223,14 @@ Let's take a look at the movelist that Ryo2005 gave him.
 | This special move has good priority against all jump-ins but it lacks invincibility frames, therefore making it a poor reversal option. Frankly, the lack of reversal options on wake up is probably Tung's biggest weakness. Back to Retsusenkyaku, it is an important move for countering jump-ins but also as your best option as a follow-up to the ground Rage Combo, which can lead to Tung's most devastating combos. Notably, the light version can be followed up by the heavy version in the corner, leading to big damage even without meter to spend. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-:::div{class="md-table-move" style="--col1:60%; --col2:20%; --col3:20%"}
-| Dai Geki Hou | | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"} |
-|--|--|--:|
-| This is probably Tung's best super. It has a surprising amount of range, it has good priority, and it does good damage. You can use this super in the corner for huge damage - most of Tung's most damaging combos use this super to great effect. Based on the hitbox, you can use it to juggle enemies that have nearly fallen to the floor and the super will pick them up to score all hits. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-09-02-ryo2005-tung-fu-rue/double-dragon-kick-3by4.webm" type="video/webm">Sorry, video not supported.</video> |
-:::
-
 ### Trials
 As a way of giving back, every character creation spotlight on my website will be accompanied by a Trials definition file to be used with the [Ikemen GO Trials Mode module](https://github.com/two4teezee/Ikemen-GO-Trials-Mode).
 I'll do this no matter how new or old the character I'm spotlighting is. 
 Tung has some pretty cool tech that can turn the fight in your favor in a hurry, especially if you have meter to spend.
 If you want to give it Trials Mode a go with Ryo2005's Tung Fu Rue, take a look [here](https://github.com/two4teezee/Ikemen-GO-Sample-Trials-Definition-Files).
-You can see a couple of examples from Tung's Trials below.
+You can watch me struggle through Tung's Trials (that I created, mind you) below.
 
-<table style="margin:0;display:block;">
-    <tr>
-        <td style="width=50%">
-            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
-                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/corner-combo-2.webm" type="video/webm"> Sorry, video not supported.
-            </video>
-        </td>
-        <td style="width=50%">
-            <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
-                <source src="/posts/25-09-02-ryo2005-tung-fu-rue/final_combo.webm" type="video/webm"> Sorry, video not supported.
-            </video>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <p style="color:gray; font-style:italic; margin:0px; justify-self:center">The two final trials in the Trials definition file I created for Ryo2005's Tung Fu Rue.</p>
-        </td>
-    </tr>
-</table>
+<iframe width="100%" src="https://youtu.be/UZulPQ7Xf7A" title="Ikemen GO Trials Mode - Tung Fu Rue by Ryo2005" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Final Thoughts
 Ryo2005's characters are some of my favorite Mugen creations ever.
@@ -264,4 +240,6 @@ The implementation is tight, the controls are quite good, and Tung is a really f
 That said, there are some flaws.
 For instance, the lack of a reversal move, or a sufficient input window on wake-up, really hampers the use of Tung in some rosters.
 Without meter to use one of his Guard Cancel techniques, he simply cannot deal with characters that put on constant pressure.
-Overall, I highly recommend Tung Fu Rue by Ryo2005.
+But, don't let that steer you away from this awesome character.
+Ryo2005's characters in general are awesome, and Tung is a good example of his work.
+He is a straightforward character with a lot of interesting options in neutral, some cool combos, and tools that allow him to navigate most situations.

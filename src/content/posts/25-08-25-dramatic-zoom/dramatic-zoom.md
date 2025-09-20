@@ -40,7 +40,7 @@ The effect is really, really cool and it can lead to some pretty epic moments.
 In my testing I've found that it is best suited for characters or game-types that are more footsy-heavy, so SF or KOF-type gameplay.
 It works with all characters but it can get in the way of characters with more frenetic and fast-paced gameplay, like anime or MvC-styled characters.
 
-<video controls width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+<video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
     <source src="/posts/25-08-25-dramatic-zoom/drama2.webm" type="video/webm">
     Sorry, video not supported.
 </video>
@@ -48,7 +48,7 @@ It works with all characters but it can get in the way of characters with more f
 The effect gets triggered when a counter hit is imminent, or when both characters are close to one another and action is abound.
 The effect sometimes triggers when two characters swing at each other but both whiff, which is also really neat.
 
-<video controls width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+<video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
     <source src="/posts/25-08-25-dramatic-zoom/drama1.webm" type="video/webm">
     Sorry, video not supported.
 </video>
@@ -148,7 +148,7 @@ if map(_pots_dramaticzoom_cfg_slowmo) > 0
 }
 ```
 
-<video controls width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
+<video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px">
     <source src="/posts/25-08-25-dramatic-zoom/drama3.webm" type="video/webm">
     Sorry, video not supported.
 </video>
