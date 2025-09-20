@@ -1,5 +1,6 @@
 ---
 import path from "node:path";
+import Giscus from "@components/Giscus.astro";
 import License from "@components/misc/License.astro";
 import Markdown from "@components/misc/Markdown.astro";
 import I18nKey from "@i18n/i18nKey";
@@ -107,6 +108,14 @@ const jsonLd = {
             </Markdown>
 
             {licenseConfig.enable && <License title={entry.data.title} slug={entry.slug} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
+
+            <!-- Comments Section -->
+            <div class="mt-8 mb-6 onload-animation">
+                <div class="card-base px-6 py-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4 text-black/90 dark:text-white/90">Comments</h3>
+                    <Giscus />
+                </div>
+            </div>
 
         </div>
     </div>
