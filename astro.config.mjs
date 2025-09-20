@@ -17,6 +17,10 @@ import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import { expressiveCodeConfig } from "./src/config.ts";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
+import {
+	defLang,
+	pluginDefLanguage,
+} from "./src/plugins/expressive-code/def-language.ts";
 import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
 import {
 	pluginZssLanguage,
@@ -63,13 +67,14 @@ export default defineConfig({
 		expressiveCode({
 			themes: [expressiveCodeConfig.theme, expressiveCodeConfig.theme],
 			shiki: {
-				langs: [zssLang],
+				langs: [zssLang, defLang],
 			},
 			plugins: [
 				pluginCollapsibleSections(),
 				pluginLineNumbers(),
 				pluginLanguageBadge(),
 				pluginZssLanguage(),
+				pluginDefLanguage(),
 				pluginCustomCopyButton(),
 			],
 			defaultProps: {
@@ -79,6 +84,9 @@ export default defineConfig({
 						showLineNumbers: false,
 					},
 					zss: {
+						showLineNumbers: true,
+					},
+					def: {
 						showLineNumbers: true,
 					},
 				},
