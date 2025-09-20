@@ -10,7 +10,7 @@ lang: ''
 ---
 
 This small but important update introduces the "or" operand for `animno` and `stateno` to Trials Mode.
-This allows a user to define trail steps that have multiple valid state or animation values.
+This allows a user to define trial steps that have multiple valid state or animation values.
 This is especially handy for a trial step that uses a special move that the creator might have implemented with different state numbers for different strengths, for instance.
 An example is provided below:
 
