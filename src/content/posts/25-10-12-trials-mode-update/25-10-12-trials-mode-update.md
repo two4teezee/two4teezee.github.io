@@ -38,6 +38,8 @@ Example:
 ```ini
 [TrialDef, KFM's First Trial]
 trial.textbox = 'This is KFM's first trial. Good luck!'
+trial.textbox.en = 'This is KFM's first trial. Good luck!'
+trial.textbox.es = 'Este es el primer trial de Kung Fu Man. Buena Suerte!`
 ```
 
 ### trialstep.X.text
