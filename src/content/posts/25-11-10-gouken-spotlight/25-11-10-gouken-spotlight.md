@@ -200,6 +200,12 @@ You can't use the CC activation to blow up an opponent like in SFA2, this implem
 | Gouken's normals are definitely a mixed bag. His Standing Light attacks can chain into themselves. Unlike in SF4, Gouken can actually capitalize on this to use it as a hit confirm, but you need to be quick. :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} can be cancelled into light Tatsu, while :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} can be cancelled into Senkugoshoha, leading to big damage potential. Gouken's Crouching Light Punch is now 3f, addressing one of his big weaknesses in neutral, but his Crouching Light Kick is still not super useful. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/chainlights-2by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
+:::div{class="md-table-move" style="--col1:75%; --col2:25%;"}
+| Crouching Heavy Punch | :icon{name="_D"}:icon{name="_++"}:icon{name="^HP"} |
+|--|--:|
+| In SF4 this was one of Gouken's strongest normals. As a 6f normal, it dealt heavy damage and also led to strong follow-on damage. That holds true in this implementation, either as a follow-up to a jump-in or as a ground punish that can lead to a strong combo. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/countertosuper-3by2.webm" type="video/webm">Sorry, video not supported.</video> |
+:::
+
 :::div{class="md-table-move" style="--col1:59%; --col2:26%; --col3:15%"}
 | Senkugoshoha | | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^P"} |
 |--|--|--:|
