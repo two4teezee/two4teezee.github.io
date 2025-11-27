@@ -1,7 +1,7 @@
 ---
 title: 'Spotlight: Gouken by KarmaCharmeleon'
-published: 2025-11-13
-description: 'An awesome rendition of Gouken.'
+published: 2025-11-27
+description: 'One of my favorite Mugen creations of all time.'
 image: './gouken-idle.webp'
 tags: [Character, Karma, Spotlight]
 category: 'Spotlight: Character'
@@ -200,10 +200,10 @@ You can't use the CC activation to blow up an opponent like in SFA2, this implem
 | Gouken's normals are definitely a mixed bag. His Standing Light attacks can chain into themselves. Unlike in SF4, Gouken can actually capitalize on this to use it as a hit confirm, but you need to be quick. :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} can be cancelled into light Tatsu, while :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} can be cancelled into Senkugoshoha, leading to big damage potential. Gouken's Crouching Light Punch is now 3f, addressing one of his big weaknesses in neutral, but his Crouching Light Kick is still not super useful. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/chainlights-2by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-:::div{class="md-table-move" style="--col1:75%; --col2:25%;"}
+:::div{class="md-table-move" style="--col1:25%; --col2:75%;"}
 | Crouching Heavy Punch | :icon{name="_D"}:icon{name="_++"}:icon{name="^HP"} |
 |--|--:|
-| In SF4 this was one of Gouken's strongest normals. As a 6f normal, it dealt heavy damage and also led to strong follow-on damage. That holds true in this implementation, either as a follow-up to a jump-in or as a ground punish that can lead to a strong combo. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/countertosuper-3by2.webm" type="video/webm">Sorry, video not supported.</video> |
+| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/chp-3by2.webm" type="video/webm">Sorry, video not supported.</video> | In SF4 this was one of Gouken's strongest normals. In SF4 it was a 6f normal that dealt heavy damage and also led to strong follow-on damage. That holds true in this implementation, either as a follow-up to a jump-in or as a ground punish that can lead to a strong combo. It's now a 5f normal that deals great damage and can actually be linked after Gohadoken, or used as a ground starter as a relatively safe punish. It's unsafe on block but you can follow it up with a Light Gohadoken to make it safe. |
 :::
 
 :::div{class="md-table-move" style="--col1:59%; --col2:26%; --col3:15%"}
@@ -212,10 +212,22 @@ You can't use the CC activation to blow up an opponent like in SFA2, this implem
 | Increasing punch strengths result in greater travel distance and hit delay. For that reason you'll typically combo into the Light or EX versions. The Medium, Heavy and EX versions all have an afterimage - Gouken can pass through projectiles while the afterimage is active. The EX version is a primary source of damage for Gouken. Mid-screen, Gouken can combo into his Tatsu or go for a reset, while in the corner it leads to big damage - Karma gave Senkugoshoha more utility than in SF4! |  <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/sengoFB-3by2.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/Corner2EX-2by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
-:::div{class="md-table-move" style="--col1:25%; --col2:25%; --col3:50%"}
+:::div{class="md-table-move" style="--col1:25%; --col2:75%;"}
+| Kyakkishu | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"} |
+|--|--:|
+| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/goukenblender-16by9.webm" type="video/webm">Sorry, video not supported.</video> | Also known as the Demon Flip, this special has four follow-ups: press nothing to get a sweep (unsafe on block), press :icon{name="^P"} to turn it into an empty jump, press :icon{name="^K"} to do a diving kick that is positive on block, and finally :icon{name="^2K"} or :icon{name="^2P"} when near to get a grab. This special allows Gouken to really keep up the pressure in the corner when used effectively. The EX version has some tracking but frankly I wouldn't bother. |
+:::
+
+:::div{class="md-table-move" style="--col1:50%; --col2:25%; --col3:25%"}
 | Kongoshin | | :icon{name="_DSB"}:icon{name="_++"}:icon{name="^P"} |
 |--|--|--:|
-| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/counter-1by1.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/counterfail-1by1.webm" type="video/webm">Sorry, video not supported.</video> | You might think Kongoshin is a redundant option for a character that has access to parries AND Zero Counter, but Kongoshin is a very interesting move. The counter window is a lot more forgiving than the parry window and it doesn't require meter. It deals good damage and is a decent option against characters that primarily rely on single hit moves. Beware, the counter will fail against counter hit moves. Interestingly, Kongoshin can be super cancelled out of, so if your reads are really good you can actually get a ton of damage out of this. |
+| You might think Kongoshin is a redundant option for a character that has access to parries AND Zero Counter, but Kongoshin is a very interesting move. The counter window is a lot more forgiving than the parry window and it doesn't require meter. It deals good damage and is a decent option against characters that primarily rely on single hit moves. Beware, the counter will fail against counter hit moves. Interestingly, Kongoshin can be super cancelled out of, so if your reads are really good you can actually get a ton of damage out of this. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/counter-1by1.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/counterfail-1by1.webm" type="video/webm">Sorry, video not supported.</video> |
+:::
+
+:::div{class="md-table-move" style="--col1:27%; --col2:73%;"}
+| Shinku Tatsumaki Senpukyaku | :icon{name="_QCB"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^K"} |
+|--|--:|
+| <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/shinkutatsu-3by2.webm" type="video/webm">Sorry, video not supported.</video> | Gouken has several supers at his disposal but Shinku Tatsumaki Senpukyaku stands out. While Kinjite Shoryuken can be a good reversal super, its damage is lower than Shinku Tatsumaki Senpukyaku. This super has great damage potential and combos well off Tatsumaki Gorasen. Generally you're better off saving your meter for EX moves or Shin Shoryuken, but if you need damage now, this is your best option. The MAX version (with :icon{name="^2K"}) is also very strong and the ender to one of Gouken's strongest combos. |
 :::
 
 :::div{class="md-table-move" style="--col1:60%; --col2:40%;"}
@@ -223,3 +235,21 @@ You can't use the CC activation to blow up an opponent like in SFA2, this implem
 |--|--:|
 | Karma did an amazing job of bringing Gouken's iconic Ultra to life in Mugen. This move deals a TON of damage, especially if you land the first hit deep. The classic setup off Amaoroshi (:icon{name="_NEAR"}:icon{name="_F"} or :icon{name="_B"}:icon{name="_++"}:icon{name="^2K"}) is still the preferred way of landing this super due to reduced scaling, but you can cancel specials into this as well. If you get the toss, wait for them to come back down to get the first hit deep. Just like in SF4, if you don't land that first hit deep you get a weaker version of the super that does substantially less damage. If you're a Gouken player, you live to land this super. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/ShinShoryuToss-16by9.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
+
+### Trials
+As a way of giving back, every character creation spotlight on my website will be accompanied by a Trials definition file to be used with the [Ikemen GO Trials Mode module](https://github.com/two4teezee/Ikemen-GO-Trials-Mode).
+I'll do this no matter how new or old the character I'm spotlighting is. 
+Gouken hits like a truck and his combos aren't too difficult to pull off, but he has some pretty advanced stuff - check out that last combo!
+If you want to give it Trials Mode a go with Karma's Gouken, take a look [here](https://github.com/two4teezee/Ikemen-GO-Sample-Trials-Definition-Files).
+You can watch me struggle through Tung's Trials (that I created, mind you) below.
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/LqEtLRi0CrE?si=05seC2XISFfgmIiT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### Final Thoughts
+Despite Gouken being a weak character in SF4, he is one of my all-time favorite Street Fighter roster entries.
+This creation pays homage to a fighting game character in ways few other Mugen creations have.
+The sprite work is incredible, the gameplay systems are awesome, the input system is on point, and the overall attention to detail is simply unmatched.
+This is easily one of my favorite Mugen creations of all time.
+
+There isn't much more to say.
+If you run PotS-style characters in your roster and you don't have Gouken in it... you should change that.
