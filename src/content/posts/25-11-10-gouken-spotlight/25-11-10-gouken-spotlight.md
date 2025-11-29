@@ -5,7 +5,7 @@ description: 'One of my favorite Mugen creations of all time.'
 image: './gouken-idle.webp'
 tags: [Character, Karma, Spotlight]
 category: 'Spotlight: Character'
-draft: true 
+draft: false 
 lang: ''
 ---
 
