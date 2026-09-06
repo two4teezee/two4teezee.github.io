@@ -34,6 +34,12 @@ jobs:
         with:
           run_install: false # Disable auto-install
 
+      # A transitive dependency (@emmetio/css-parser, via @astrojs/check ->
+      # volar-service-emmet) is pinned in pnpm-lock.yaml to a git URL in SSH
+      # form. CI has no SSH key, so rewrite github.com git URLs to HTTPS.
+      - name: Use HTTPS for github.com git dependencies
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -59,6 +65,12 @@ jobs:
         uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
         with:
           run_install: false # Disable auto-install
+
+      # A transitive dependency (@emmetio/css-parser, via @astrojs/check ->
+      # volar-service-emmet) is pinned in pnpm-lock.yaml to a git URL in SSH
+      # form. CI has no SSH key, so rewrite github.com git URLs to HTTPS.
+      - name: Use HTTPS for github.com git dependencies
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

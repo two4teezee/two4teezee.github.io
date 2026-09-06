@@ -20,6 +20,11 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      # A transitive dependency (@emmetio/css-parser, via @astrojs/check ->
+      # volar-service-emmet) is pinned in pnpm-lock.yaml to a git URL in SSH
+      # form. CI has no SSH key, so rewrite github.com git URLs to HTTPS.
+      - name: Use HTTPS for github.com git dependencies
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         # with:

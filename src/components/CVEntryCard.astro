@@ -15,7 +15,7 @@ const { title, engine, date, location, description, tags } = cv_entry;
 // let {logo} = cv_entry;
 const className = Astro.props.class || "";
 
-let logo = undefined;
+let logo: string | undefined;
 
 if (
 	cv_entry.logo !== "" &&
