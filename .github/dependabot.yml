@@ -1,9 +1,12 @@
 version: 2
 updates:
+  # Touched 2026-09-06 to reactivate Dependabot version updates, which
+  # GitHub auto-paused after the repo was inactive for ~90 days.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 10
     groups:
       patch-updates:
         patterns:
