@@ -195,8 +195,12 @@ flatten the ramp.
 | `step` | picked from `max` | Gap between axis ticks |
 | `caption` | - | Title above the chart; `:::framechart[Title]` also works |
 | `unit` | `frames` | Label beside the axis |
-| `legend` | `true` | `false` hides the legend |
+| `legend` | `bottom` | `right` puts it beside the chart, `false` hides it |
 | `labels` | `auto` | `off` hides the numbers on the bars |
+
+`legend=right` sets the legend down the right-hand side and lets the plot
+scroll on its own beside it; below 40rem of viewport it drops back under the
+chart, since at that width the column costs more than it is worth.
 
 Anything on a line that isn't a `phase=frames` token is reported at build time
 rather than dropped silently, so a typo shows up in the build log.
