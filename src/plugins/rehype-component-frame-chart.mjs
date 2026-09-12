@@ -480,12 +480,21 @@ export function FrameChartComponent(properties, children) {
 		h(
 			"div",
 			{ class: "fc-gridlines" },
-			ticks.map((frame) =>
-				h("div", {
-					class: `fc-gridline${frame === 0 ? " fc-gridline-zero" : ""}`,
+			ticks.map((frame) => {
+				/* A line at the very end of the scale would hang its 1px past
+				   the plot and put a scrollbar on it, so it is drawn just
+				   inside instead. */
+				const edge =
+					frame === 0
+						? " fc-gridline-zero"
+						: Math.abs(frame - max) < 1e-6
+							? " fc-gridline-end"
+							: "";
+				return h("div", {
+					class: `fc-gridline${edge}`,
 					style: `left:${(frame / max) * 100}%`,
-				}),
-			),
+				});
+			}),
 		);
 
 	const grid = [];
@@ -642,13 +651,24 @@ export function FrameChartComponent(properties, children) {
 	};
 	used.sort((a, b) => rank(a) - rank(b));
 
+	/* `legend` says where it goes as well as whether it appears at all:
+	   bottom (the default), right, or off. */
+	const legendAt = String(get("legend") ?? "bottom")
+		.trim()
+		.toLowerCase();
+	const legendOff = ["false", "off", "none", "hide", "no"].includes(legendAt);
+	const legendRight = legendAt === "right" || legendAt === "side";
+
 	const parts = [];
 	if (caption?.length) {
 		parts.push(h("figcaption", { class: "fc-caption" }, caption));
 	}
-	parts.push(h("div", { class: "fc-grid" }, grid));
+	/* The plot scrolls on its own, so a legend beside it stays put. */
+	parts.push(
+		h("div", { class: "fc-body" }, [h("div", { class: "fc-grid" }, grid)]),
+	);
 
-	if (used.length > 1 && String(get("legend") ?? "true") !== "false") {
+	if (used.length > 1 && !legendOff) {
 		parts.push(
 			h(
 				"div",
@@ -663,7 +683,13 @@ export function FrameChartComponent(properties, children) {
 		);
 	}
 
-	return h("figure", { class: "frame-chart not-prose" }, parts);
+	return h(
+		"figure",
+		{
+			class: `frame-chart not-prose${legendRight ? " fc-legend-right" : ""}`,
+		},
+		parts,
+	);
 }
 
 /** Ticks on clean numbers: 5, 10, 20, 25, 50, 100... */

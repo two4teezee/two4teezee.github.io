@@ -257,7 +257,30 @@ a.card-github.fetch-error
   background: var(--fc-surface)
   border-radius: var(--radius-large)
   color: var(--fc-ink)
-  overflow-x: auto
+
+  // The plot is the scroll container, not the figure, so a legend placed
+  // beside it cannot be scrolled out of view. Only the horizontal axis can
+  // ever need scrolling; overflow-y is pinned because leaving it `visible`
+  // makes the browser compute it to `auto`, and then a sub-pixel row height
+  // is enough to raise a vertical scrollbar that has nothing to scroll to.
+  .fc-body
+    overflow-x: auto
+    overflow-y: hidden
+    // Match the site's slim bars rather than the OS default, for the narrow
+    // screens where the plot genuinely does scroll. The webkit rules cover
+    // the browsers that don't take the standard properties yet.
+    scrollbar-width: thin
+    scrollbar-color: var(--scrollbar-bg) transparent
+
+    &::-webkit-scrollbar
+      height: 6px
+
+    &::-webkit-scrollbar-track
+      background: transparent
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 3px
+      background: var(--scrollbar-bg)
 
   .fc-caption
     margin: 0 0 0.65rem
@@ -317,6 +340,10 @@ a.card-github.fetch-error
 
   .fc-gridline-zero
     background: var(--fc-axis-line)
+
+  // Drawn 1px inside the end of the scale so it doesn't overflow the plot.
+  .fc-gridline-end
+    margin-left: -1px
 
   .fc-track
     position: relative
@@ -523,6 +550,10 @@ a.card-github.fetch-error
     top: 0.2rem
     transform: translateX(-50%)
     font-size: 0.65rem
+    // Without this the inherited line-height makes the tick's box taller than
+    // the axis lane, and the overflow it causes is what used to raise a
+    // scrollbar on the plot.
+    line-height: 1
     font-variant-numeric: tabular-nums
     color: var(--fc-ink-muted)
 
@@ -550,3 +581,34 @@ a.card-github.fetch-error
     width: 0.7rem
     height: 0.7rem
     border-radius: 2px
+
+// legend=right: caption across the top, plot and legend side by side. The
+// plot column gets min-width 0 so it yields to the legend and scrolls inside
+// itself rather than pushing the legend off the figure.
+.frame-chart.fc-legend-right
+  display: grid
+  grid-template-columns: minmax(0, 1fr) auto
+  column-gap: 1.1rem
+  align-items: start
+
+  .fc-caption
+    grid-column: 1 / -1
+
+  .fc-legend
+    flex-direction: column
+    flex-wrap: nowrap
+    gap: 0.3rem
+    margin-top: 0
+    // Level with the first bar rather than with the top of the figure.
+    padding-top: var(--fc-row-pad)
+
+  // Too narrow to give up a column: fall back to the stacked layout.
+  @media (max-width: 40rem)
+    display: block
+
+    .fc-legend
+      flex-direction: row
+      flex-wrap: wrap
+      gap: 0.3rem 0.9rem
+      margin-top: 0.6rem
+      padding-top: 0
