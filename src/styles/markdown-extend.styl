@@ -243,3 +243,310 @@ a.card-github.fetch-error
   transition-property: all
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
   transition-duration: 0.15s
+
+.frame-chart
+  // One place to tune the vertical rhythm: every lane, the bar heights and the
+  // label offset are derived from these.
+  --fc-row-pad: 0.26rem
+  --fc-bar-h: 16px
+  --fc-sub-h: 7px
+  --fc-sub-gap: 2px
+  --fc-lane-h: 0.78rem
+  margin: 1.5rem 0
+  padding: 0.9rem 1.1rem 0.8rem
+  background: var(--fc-surface)
+  border-radius: var(--radius-large)
+  color: var(--fc-ink)
+  overflow-x: auto
+
+  .fc-caption
+    margin: 0 0 0.65rem
+    font-size: 0.95rem
+    font-weight: 500
+    line-height: 1.3
+    color: var(--tw-prose-headings)
+
+  .fc-grid
+    display: grid
+    grid-template-columns: minmax(2rem, max-content) 1fr
+    column-gap: 0.9rem
+    // Rows align from the top so the label can be pinned to its main bar
+    // rather than floating in the middle of the lanes beneath it.
+    align-items: start
+    // Narrower than this the segment values stop fitting, so scroll the
+    // figure instead of squeezing the bars.
+    min-width: 24rem
+
+  .fc-row-label
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    // Centred on the run of bars - the main bar plus any thin tracks under it
+    // - which the plugin measures per row.
+    height: var(--fc-group, var(--fc-bar-h))
+    margin-top: calc(var(--fc-row-pad) + var(--fc-lift, 0px))
+    font-size: 0.8125rem
+    font-weight: 500
+    line-height: 1.1
+    text-align: right
+    color: var(--fc-ink)
+
+  // Glyphs come in via :icon{} at their own pixel size; they sit on the text
+  // baseline so a label can mix a button icon with a word.
+  .fc-row-label-text
+    display: inline-block
+
+    img
+      vertical-align: -0.3em
+
+  .fc-row-plot
+    position: relative
+    padding: var(--fc-row-pad) 0
+
+  .fc-gridlines
+    position: absolute
+    inset: 0
+    pointer-events: none
+
+  .fc-gridline
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 1px
+    background: var(--fc-gridline)
+
+  .fc-gridline-zero
+    background: var(--fc-axis-line)
+
+  .fc-track
+    position: relative
+    width: 100%
+
+  .fc-track-main
+    height: var(--fc-bar-h)
+
+  .fc-track-sub
+    height: var(--fc-sub-h)
+    margin-top: var(--fc-sub-gap)
+
+  .fc-seg
+    position: absolute
+    top: 0
+    bottom: 0
+    box-sizing: border-box
+    min-width: 4px
+    display: flex
+    align-items: center
+    justify-content: center
+    // 2px of surface taken off the segment's own trailing edge separates
+    // touching fills without shifting either boundary off the axis.
+    border-right: 2px solid var(--fc-surface)
+
+  .fc-seg-end
+    border-right: none
+    border-top-right-radius: 4px
+    border-bottom-right-radius: 4px
+
+  // A window that starts partway through a move, like late invulnerability,
+  // has a free left edge too rather than a baseline to sit square against.
+  .fc-seg-free-start
+    border-top-left-radius: 4px
+    border-bottom-left-radius: 4px
+
+  .fc-seg-value
+    font-size: 0.6875rem
+    font-weight: 600
+    line-height: 1
+    font-variant-numeric: tabular-nums
+    color: var(--fc-ink-on-fill)
+
+  .fc-fill-startup
+    background: var(--fc-startup)
+
+    // The darkest step of the ramp needs light numbers on it.
+    .fc-seg-value
+      color: var(--fc-ink-on-dark)
+
+  .fc-fill-recovery
+    background: var(--fc-recovery)
+
+  .fc-fill-active
+    background: var(--fc-active)
+
+  // Hue-free, and outlined so a pale block still reads against the panel and
+  // never passes for a step of the ramp.
+  .fc-fill-neutral
+    background: var(--fc-neutral)
+    box-shadow: inset 0 0 0 1px var(--fc-hollow-line)
+
+    .fc-seg-value
+      color: var(--fc-ink)
+
+  .fc-fill-hollow
+    background: transparent
+    box-shadow: inset 0 0 0 1px var(--fc-hollow-line)
+
+    .fc-seg-value
+      color: var(--fc-ink)
+
+  // Second-track states: a step of the ramp, hatched over in black.
+  //
+  // The shade is the background COLOUR and the black is the gradient on top,
+  // not the other way round. A gradient is the fragile half - it takes no part
+  // in the colour it can't resolve, and a bar whose only ink came from one
+  // disappears into the panel. This way the hatch is literal black, needing no
+  // variable at all, and the worst a failed gradient can do is leave a solid
+  // block that is still plainly there.
+  .fc-fill-inv, .fc-fill-armor, .fc-fill-counter
+    background-image: repeating-linear-gradient(45deg, var(--fc-hatch-gap), var(--fc-hatch-gap) 3px, transparent 3px, transparent 7px)
+
+  .fc-fill-inv
+    background-color: var(--fc-active)
+
+  .fc-fill-armor
+    background-color: var(--fc-recovery)
+
+  // Upright rather than diagonal: at legend-swatch size a mirrored diagonal
+  // is not tellable from the invulnerable one.
+  .fc-fill-counter
+    background-color: var(--fc-active)
+    background-image: repeating-linear-gradient(90deg, var(--fc-hatch-gap), var(--fc-hatch-gap) 3px, transparent 3px, transparent 7px)
+
+  // A thin track's value sits beside the end of its bar instead of under it,
+  // so a second track costs only its own height.
+  .fc-sub-value
+    position: absolute
+    top: 50%
+    margin-left: 5px
+    transform: translateY(-50%)
+    font-size: 0.65rem
+    font-weight: 600
+    line-height: 1
+    font-variant-numeric: tabular-nums
+    white-space: nowrap
+    color: var(--fc-ink-muted)
+
+  .fc-sub-value-before, .fc-sub-value-inside
+    margin-left: -5px
+    transform: translate(-100%, -50%)
+
+  // Last resort, when the window fills the scale: the number sits on the
+  // hatch, which is mostly surface, so it takes the ordinary ink.
+  .fc-sub-value-inside
+    color: var(--fc-ink)
+
+  .fc-lane
+    position: relative
+    height: var(--fc-lane-h)
+
+  .fc-outside
+    position: absolute
+    bottom: 0
+    transform: translateX(-50%)
+    display: flex
+    flex-direction: column
+    align-items: center
+    line-height: 1
+
+    &:after
+      content: ''
+      width: 1px
+      height: 2px
+      margin-top: 1px
+      background: var(--fc-hollow-line)
+
+  .fc-outside-value
+    font-size: 0.65rem
+    font-weight: 600
+    font-variant-numeric: tabular-nums
+    color: var(--fc-ink-muted)
+
+  .fc-lane-sub
+    .fc-outside
+      bottom: auto
+      top: 0
+      flex-direction: column-reverse
+
+      &:after
+        margin-top: 0
+        margin-bottom: 1px
+
+  .fc-lane-marks
+    height: 0.95rem
+    margin-top: 1px
+
+  .fc-mark
+    position: absolute
+    // Pulled up by the thin tracks between it and the main bar, so the caret
+    // touches that bar whether or not the row has any.
+    top: calc(-1 * var(--fc-mark-rise, 0px))
+    transform: translateX(-50%)
+    display: flex
+    flex-direction: column
+    align-items: center
+    line-height: 1
+
+  .fc-mark-caret
+    width: 0
+    height: 0
+    border-left: 3px solid transparent
+    border-right: 3px solid transparent
+    border-bottom: 3px solid var(--fc-ink-muted)
+
+  // Bridges the caret back down to its text; zero-height when the bar sits
+  // directly above the mark lane anyway.
+  .fc-mark-leader
+    width: 1px
+    height: var(--fc-mark-rise, 0px)
+    background: var(--fc-hollow-line)
+
+  .fc-mark-text
+    margin-top: 2px
+    font-size: 0.65rem
+    white-space: nowrap
+    color: var(--fc-ink-muted)
+
+  .fc-axis-unit
+    padding-top: 0.35rem
+    font-size: 0.65rem
+    text-align: right
+    color: var(--fc-ink-muted)
+
+  .fc-axis
+    position: relative
+    height: 0.95rem
+    margin-top: 0.3rem
+    border-top: 1px solid var(--fc-axis-line)
+
+  .fc-tick
+    position: absolute
+    top: 0.2rem
+    transform: translateX(-50%)
+    font-size: 0.65rem
+    font-variant-numeric: tabular-nums
+    color: var(--fc-ink-muted)
+
+  .fc-tick-first
+    transform: none
+
+  .fc-tick-last
+    transform: translateX(-100%)
+
+  .fc-legend
+    display: flex
+    flex-wrap: wrap
+    gap: 0.3rem 0.9rem
+    margin-top: 0.6rem
+    font-size: 0.72rem
+    color: var(--fc-ink-muted)
+
+  .fc-legend-item
+    display: inline-flex
+    align-items: center
+    gap: 0.35rem
+
+  .fc-swatch
+    flex: none
+    width: 0.7rem
+    height: 0.7rem
+    border-radius: 2px

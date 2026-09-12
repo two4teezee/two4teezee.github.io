@@ -12,6 +12,16 @@ rainbow-dark = linear-gradient(to right, oklch(0.70 0.10 0), oklch(0.70 0.10 30)
   --radius-large 1rem
   --content-delay 150ms
 
+  /* Every colour below is oklch(... var(--hue)), but --hue itself is only set
+     by the theme script at runtime - so until that runs, all of them are
+     invalid at computed-value time. A plain background recovers once the
+     script sets the hue; a gradient or box-shadow built on one does not, which
+     is why the frame charts' hatched bars rendered as bare black. Seeding the
+     hue from --configHue (Layout renders it inline on <html>, from config.ts)
+     makes the stylesheet valid on its own. The script still overrides this,
+     since it writes --hue to the element's own style attribute. */
+  --hue: var(--configHue, 50)
+
 /* An util to define variables that vary with light and dark mode */
 define(vars)
   :root
@@ -95,4 +105,27 @@ define({
   --toc-btn-active: oklch(0.90 0.015 var(--hue)) oklch(0.25 0.02 var(--hue))
   --toc-width: calc((100vw - var(--page-width)) / 2 - 1rem)
   --toc-item-active: oklch(0.70 0.13 var(--hue)) oklch(0.35 0.07 var(--hue))
+
+  /* Frame charts follow the site hue. The phases that carry colour are one
+     ordinal ramp - startup darkest, active lightest, recovery between - so
+     they are told apart by lightness rather than by hue. That is what keeps
+     them separable at every hue the picker can reach, colourblind readers
+     included, now that they can no longer be different colours. Chroma is
+     capped at what each step holds inside sRGB for the worst hue, so nothing
+     silently gets gamut-mapped and flattens the ramp.
+     Airborne and landing recovery stay hue-free; the neutral is stepped clear
+     of the ramp's lightness so it cannot be mistaken for one of its steps. */
+  --fc-surface: oklch(0.98 0.005 var(--hue)) oklch(0.18 0.012 var(--hue))
+  --fc-startup: oklch(0.38 0.06 var(--hue)) oklch(0.46 0.074 var(--hue))
+  --fc-recovery: oklch(0.545 0.085 var(--hue)) oklch(0.62 0.1 var(--hue))
+  --fc-active: oklch(0.71 0.11 var(--hue)) oklch(0.78 0.105 var(--hue))
+  --fc-neutral: oklch(0.88 0.01 var(--hue)) oklch(0.3 0.015 var(--hue))
+  --fc-hatch-gap: #000
+  --fc-hollow-line: black(0.22) white(0.28)
+  --fc-gridline: black(0.08) white(0.10)
+  --fc-axis-line: black(0.22) white(0.26)
+  --fc-ink: oklch(0.32 0.02 var(--hue)) oklch(0.92 0.01 var(--hue))
+  --fc-ink-muted: oklch(0.52 0.02 var(--hue)) oklch(0.72 0.015 var(--hue))
+  --fc-ink-on-fill: #101010
+  --fc-ink-on-dark: #f7f7f7
 })
