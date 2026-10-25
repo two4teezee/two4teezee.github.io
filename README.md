@@ -205,9 +205,45 @@ chart, since at that width the column costs more than it is worth.
 Anything on a line that isn't a `phase=frames` token is reported at build time
 rather than dropped silently, so a typo shows up in the build log.
 
-Values sit inside their segment when they fit and just above it when they do
-not. A thin track's value sits beside the end of its bar, so a second track
-costs only its own height. Every segment also names itself on hover.
+Values always sit inside their segment, centred on it - one too short to hold
+its number lets it spill over the edges instead of moving it off the bar. A
+thin track's value sits beside the end of its bar, so a second track costs
+only its own height. Every segment also names itself on hover. The same goes
+for frame tables.
+
+## Frame tables
+
+`:::frametable` is a frame-data sheet: a plain markdown table whose last column
+is drawn as a bar, one per row.
+
+```markdown
+:::frametable{caption="Standing normals"}
+| Move | ISM | Damage | Stun | Frame Data |
+|---|---|--:|--:|---|
+| :icon{name="_CLOSE"} :icon{name="^LP"} | :icon{name="^X"}:icon{name="^Z"} | 6 | 2 | startup=3 active=9 recovery=10 |
+| :icon{name="_CLOSE"} :icon{name="^HP"} | :icon{name="^X"}:icon{name="^Z"} | 9+8 | 4+3 | startup=5 active=6-11,12-18 recovery=27 ; inv=1-4 |
+| :icon{name="_CROUCH"} :icon{name="^HK"} | :icon{name="^X"}:icon{name="^Z"} | 14 | 6 | startup=8 active=13 recovery=25 |
+:::
+```
+
+- **Columns** - as many or as few as you like. Every column but the last is
+  passed through as written, so glyphs, bold and `--:` alignment all work.
+  Cells never wrap on their own; `\n` (or `<br>`) breaks one where you want,
+  which is how a long header like `Meter on \n Whiff/Hit` keeps its column
+  narrow. A cell that starts with `+` is green and one that starts with `-` is
+  red (`+3`, `-6`), in light and dark; a lone `-` stays uncoloured.
+- **The last column** is always headed "Frame Data", whatever the header row
+  says, and takes the same `phase=frames` tokens as a framechart bar - counts,
+  ranges, multi-hit lists and the phase names in [Phases](#phases). A `|` would
+  end the cell, so `;` starts another field instead: `; inv=1-4` adds a thin
+  track and `; mark=Landing@air` a mark. A row can leave it empty.
+- **No axis.** Every bar is drawn against the longest move in that table, so
+  the longest one fills its cell and the rest are in proportion to it. The
+  column takes 40% of the table's width; the others share the rest.
+
+`caption` (or `:::frametable[Title]`), `legend`, `labels` and `map` work as they
+do on a framechart. The table scrolls sideways below about 30rem rather than
+squeezing the bars.
 
 ## Table layouts
 
