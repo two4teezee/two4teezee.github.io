@@ -380,7 +380,13 @@ a.card-github.fetch-error
     border-top-left-radius: 4px
     border-bottom-left-radius: 4px
 
+  // Always on its segment; on one narrower than the number, the flex centring
+  // lets it overflow both edges evenly, and it sits above the neighbours it
+  // spills onto.
   .fc-seg-value
+    position: relative
+    z-index: 1
+    white-space: nowrap
     font-size: 0.6875rem
     font-weight: 600
     line-height: 1
@@ -581,6 +587,67 @@ a.card-github.fetch-error
     width: 0.7rem
     height: 0.7rem
     border-radius: 2px
+
+// :::frametable - the same panel and bars, laid out as a table whose last
+// column holds the bar. No axis: every bar is scaled to the table's longest.
+.frame-table
+  .ft-table
+    width: 100%
+    // Narrower than this the bars stop holding their numbers, so the body
+    // scrolls instead, as a chart's plot does.
+    min-width: 30rem
+    margin: 0
+    border-collapse: collapse
+    font-size: 0.8125rem
+    line-height: 1.2
+    font-variant-numeric: tabular-nums
+
+  th, td
+    padding: 0.3rem 0.55rem
+    vertical-align: middle
+    white-space: nowrap
+    border-bottom: 1px solid var(--fc-gridline)
+
+  // Bottom-aligned, so a one-line header sits level with the last line of
+  // one broken over two.
+  th
+    vertical-align: bottom
+    font-size: 0.72rem
+    font-weight: 600
+    text-align: left
+    color: var(--fc-ink-muted)
+    border-bottom-color: var(--fc-axis-line)
+
+  tbody tr:last-child
+    th, td
+      border-bottom: none
+
+  .ft-plus
+    color: var(--fc-plus)
+
+  .ft-minus
+    color: var(--fc-minus)
+
+  // Glyphs sit on the text baseline, as they do in a chart's row labels. The
+  // base `max-width: 100%` has to go: a percentage there makes a glyph count
+  // as zero-width when the table sizes its columns, so a cell of glyphs gets
+  // squeezed narrower than its contents and they pile up on one another.
+  img
+    max-width: none
+    vertical-align: -0.3em
+
+  // The bar column is capped at 40% of the table; the other columns share
+  // the rest by their contents.
+  .ft-frames
+    width: 40%
+    padding-left: 0.9rem
+
+  // The bars are positioned absolutely, so they give the column no width of
+  // their own; without a floor a table with many columns crushes them to
+  // nothing rather than scrolling.
+  .fc-row-plot
+    min-width: 12rem
+    padding: 0
 
 // legend=right: caption across the top, plot and legend side by side. The
 // plot column gets min-width 0 so it yields to the legend and scrolls inside

@@ -126,6 +126,12 @@ define({
   --fc-axis-line: black(0.22) white(0.26)
   --fc-ink: oklch(0.32 0.02 var(--hue)) oklch(0.92 0.01 var(--hue))
   --fc-ink-muted: oklch(0.52 0.02 var(--hue)) oklch(0.72 0.015 var(--hue))
+  /* Frame tables: a cell that starts with + or - (advantage, disadvantage).
+     Fixed hues rather than the theme's, since they carry meaning of their
+     own; the sign itself says the same thing for anyone who can't tell them
+     apart. */
+  --fc-plus: oklch(0.52 0.14 145) oklch(0.8 0.15 145)
+  --fc-minus: oklch(0.53 0.19 27) oklch(0.74 0.16 22)
   --fc-ink-on-fill: #101010
   --fc-ink-on-dark: #f7f7f7
 })

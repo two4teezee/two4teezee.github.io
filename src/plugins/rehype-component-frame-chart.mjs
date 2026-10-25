@@ -58,7 +58,7 @@ const ALIASES = {
 	space: "gap",
 };
 
-const resolveKind = (raw) => {
+export const resolveKind = (raw) => {
 	const key = String(raw).toLowerCase();
 	return ALIASES[key] || key;
 };
@@ -80,7 +80,7 @@ const PASSTHROUGH_TAGS =
 /* Directives that keep working inside a chart. rehype-components walks from
    the top down and skips whatever a component returns, so an `:icon{}` in a
    row label never gets its own turn - it has to be rendered here. */
-const INLINE_COMPONENTS = { icon: IconImageComponent };
+export const INLINE_COMPONENTS = { icon: IconImageComponent };
 
 /** Flatten the parsed children into text runs and inline nodes.
  *
@@ -88,7 +88,7 @@ const INLINE_COMPONENTS = { icon: IconImageComponent };
  * carry a glyph. Anything else that isn't plain markup got there by
  * remark-directive biting into the body - `:word` is a text directive - so put
  * the colon and the name back rather than letting it disappear. */
-function collectItems(nodes, out = []) {
+export function collectItems(nodes, out = []) {
 	for (const node of nodes || []) {
 		if (node.type === "text") {
 			out.push({ text: node.value });
@@ -110,7 +110,7 @@ function collectItems(nodes, out = []) {
 	return out;
 }
 
-const itemsText = (items) =>
+export const itemsText = (items) =>
 	items
 		.map((item) => (item.node ? `:${item.node.tagName}` : item.text))
 		.join("");
@@ -156,7 +156,7 @@ function splitLabel(items) {
 }
 
 /** Render label items as hast children, trimming the outer whitespace. */
-function buildInline(items, { unquoteText = false } = {}) {
+export function buildInline(items, { unquoteText = false } = {}) {
 	const trimmed = items
 		.map((item, index) => {
 			if (item.node) return item;
@@ -237,7 +237,11 @@ function layout(segments) {
 const trackEnd = (segments) =>
 	layout(segments).reduce((end, segment) => Math.max(end, segment.end), 0);
 
-function parseRow(line, warnings) {
+/** The frame a row's furthest-reaching track ends on. */
+export const rowEnd = (row) =>
+	Math.max(trackEnd(row.main), ...row.tracks.map(trackEnd));
+
+export function parseRow(line, warnings) {
 	const fields = line.split("|").map((f) => f.trim());
 	const label = unquote(fields[0] || "");
 	const main = parseSegments(fields[1] || "", warnings);
@@ -296,13 +300,6 @@ const kindStyle = (kind, map) => {
 	};
 };
 
-/** Wide enough for the number to sit inside the segment without clipping. */
-function fitsInside(value, max) {
-	const pct = (value / max) * 100;
-	const digits = String(value).length;
-	return pct >= digits * 2.6 + 1.4;
-}
-
 function buildSegments(segments, max, opts) {
 	const { showValues, thin, map } = opts;
 	const nodes = [];
@@ -325,7 +322,10 @@ function buildSegments(segments, max, opts) {
 
 	drawn.forEach((segment) => {
 		const { start, end, kind } = segment;
-		const inside = !thin && showValues && fitsInside(segment.value, max);
+		/* A main-bar value always rides on its segment, centred on it - one
+		   too narrow to hold it lets the number spill over its edges rather
+		   than moving it off the bar. */
+		const inside = !thin && showValues;
 		const style = `left:${(start / max) * 100}%;width:${(segment.value / max) * 100}%`;
 		const classes = [
 			"fc-seg",
@@ -412,14 +412,7 @@ export function FrameChartComponent(properties, children) {
 		body = body.slice(1);
 	}
 
-	const map = {};
-	const mapAttr = get("map");
-	if (mapAttr) {
-		for (const pair of String(mapAttr).split(/\s*,\s*/)) {
-			const [from, to] = pair.split(/\s*[=:]\s*/);
-			if (from && to) map[resolveKind(from)] = resolveKind(to);
-		}
-	}
+	const map = parseMap(get("map"));
 
 	const warnings = [];
 	const rows = splitLines(collectItems(body))
@@ -452,11 +445,7 @@ export function FrameChartComponent(properties, children) {
 		);
 	}
 
-	const longest = Math.max(
-		...rows.map((row) =>
-			Math.max(trackEnd(row.main), ...row.tracks.map(trackEnd)),
-		),
-	);
+	const longest = Math.max(...rows.map(rowEnd));
 	/* Ticks are spaced off the scale actually drawn, so a `max` set wider than
 	   the data doesn't leave the axis crowded with the data's own step. */
 	const given = Number(get("max"));
@@ -499,90 +488,8 @@ export function FrameChartComponent(properties, children) {
 
 	const grid = [];
 
-	/* Lanes carry their own height as a CSS expression. Summing those is what
-	   lets the label centre on the bars and the mark caret reach back up to
-	   the main bar, whatever lanes a particular row happens to need. */
-	const sum = (parts) => (parts.length ? `calc(${parts.join(" + ")})` : "0px");
-
 	for (const row of rows) {
-		const main = buildSegments(row.main, max, { showValues, thin: false, map });
-		const lanes = [{ node: gridlines() }];
-
-		if (main.outside.length) {
-			lanes.push({
-				node: h("div", { class: "fc-lane fc-lane-outside" }, main.outside),
-				h: "var(--fc-lane-h)",
-			});
-		}
-
-		const barIndex = lanes.length;
-		lanes.push({
-			node: h("div", { class: "fc-track fc-track-main" }, main.nodes),
-			h: "var(--fc-bar-h)",
-			bar: true,
-		});
-
-		for (const track of row.tracks) {
-			const sub = buildSegments(track, max, { showValues, thin: true, map });
-			lanes.push({
-				node: h("div", { class: "fc-track fc-track-sub" }, sub.nodes),
-				h: "var(--fc-sub-gap) + var(--fc-sub-h)",
-				bar: true,
-			});
-			if (sub.outside.length) {
-				lanes.push({
-					node: h("div", { class: "fc-lane fc-lane-sub" }, sub.outside),
-					h: "var(--fc-lane-h)",
-				});
-			}
-		}
-
-		/* Everything above the main bar the label has to clear, everything
-		   from the main bar down to the last bar it centres on, and the band
-		   between the main bar and the mark lane the caret has to climb. */
-		const lift = sum(
-			lanes
-				.slice(0, barIndex)
-				.map((lane) => lane.h)
-				.filter(Boolean),
-		);
-		const lastBar = lanes.map((lane) => !!lane.bar).lastIndexOf(true);
-		const group = sum(
-			lanes
-				.slice(barIndex, lastBar + 1)
-				.map((lane) => lane.h)
-				.filter(Boolean),
-		);
-		const rise = sum(
-			lanes
-				.slice(barIndex + 1)
-				.map((lane) => lane.h)
-				.filter(Boolean),
-		);
-
-		const marks = row.marks
-			.map((mark) => ({ ...mark, frame: resolveMarkFrame(mark.at, row.main) }))
-			.filter((mark) => Number.isFinite(mark.frame));
-
-		if (marks.length) {
-			lanes.push({
-				node: h(
-					"div",
-					{ class: "fc-lane fc-lane-marks", style: `--fc-mark-rise:${rise}` },
-					marks.map((mark) =>
-						h(
-							"div",
-							{ class: "fc-mark", style: `left:${(mark.frame / max) * 100}%` },
-							[
-								h("span", { class: "fc-mark-caret" }),
-								h("span", { class: "fc-mark-leader" }),
-								h("span", { class: "fc-mark-text" }, mark.text),
-							],
-						),
-					),
-				),
-			});
-		}
+		const { lanes, lift, group } = buildRowLanes(row, max, { showValues, map });
 
 		/* The label centres on the run of bars, not on the lanes of numbers
 		   and annotations stacked around them. */
@@ -599,13 +506,7 @@ export function FrameChartComponent(properties, children) {
 				[h("span", { class: "fc-row-label-text" }, row.label)],
 			),
 		);
-		grid.push(
-			h(
-				"div",
-				{ class: "fc-row-plot" },
-				lanes.map((lane) => lane.node),
-			),
-		);
+		grid.push(h("div", { class: "fc-row-plot" }, [gridlines(), ...lanes]));
 	}
 
 	/* The unit rides in the label column, level with the ticks, so it never
@@ -631,6 +532,127 @@ export function FrameChartComponent(properties, children) {
 		),
 	);
 
+	const { legend, legendRight } = buildLegend(rows, map, get("legend"));
+
+	const parts = [];
+	if (caption?.length) {
+		parts.push(h("figcaption", { class: "fc-caption" }, caption));
+	}
+	/* The plot scrolls on its own, so a legend beside it stays put. */
+	parts.push(
+		h("div", { class: "fc-body" }, [h("div", { class: "fc-grid" }, grid)]),
+	);
+	if (legend) parts.push(legend);
+
+	return h(
+		"figure",
+		{
+			class: `frame-chart not-prose${legendRight ? " fc-legend-right" : ""}`,
+		},
+		parts,
+	);
+}
+
+/** `map="whiff=recovery, stagger=land"` -> { whiff: "recovery", ... } */
+export function parseMap(attr) {
+	const map = {};
+	if (!attr) return map;
+	for (const pair of String(attr).split(/\s*,\s*/)) {
+		const [from, to] = pair.split(/\s*[=:]\s*/);
+		if (from && to) map[resolveKind(from)] = resolveKind(to);
+	}
+	return map;
+}
+
+/* Lanes carry their own height as a CSS expression. Summing those is what
+   lets the label centre on the bars and the mark caret reach back up to the
+   main bar, whatever lanes a particular row happens to need. */
+const sum = (parts) => (parts.length ? `calc(${parts.join(" + ")})` : "0px");
+
+/** One row's stack of lanes - the main bar, thin tracks and their values, and
+ *  marks - plus the offsets a label needs to centre on its bars: `lift` is
+ *  everything above the main bar, `group` the run of bars themselves. */
+export function buildRowLanes(row, max, { showValues, map }) {
+	const main = buildSegments(row.main, max, { showValues, thin: false, map });
+	const lanes = [];
+
+	const barIndex = lanes.length;
+	lanes.push({
+		node: h("div", { class: "fc-track fc-track-main" }, main.nodes),
+		h: "var(--fc-bar-h)",
+		bar: true,
+	});
+
+	for (const track of row.tracks) {
+		const sub = buildSegments(track, max, { showValues, thin: true, map });
+		lanes.push({
+			node: h("div", { class: "fc-track fc-track-sub" }, sub.nodes),
+			h: "var(--fc-sub-gap) + var(--fc-sub-h)",
+			bar: true,
+		});
+		if (sub.outside.length) {
+			lanes.push({
+				node: h("div", { class: "fc-lane fc-lane-sub" }, sub.outside),
+				h: "var(--fc-lane-h)",
+			});
+		}
+	}
+
+	/* Everything above the main bar the label has to clear, everything from
+	   the main bar down to the last bar it centres on, and the band between
+	   the main bar and the mark lane the caret has to climb. */
+	const lift = sum(
+		lanes
+			.slice(0, barIndex)
+			.map((lane) => lane.h)
+			.filter(Boolean),
+	);
+	const lastBar = lanes.map((lane) => !!lane.bar).lastIndexOf(true);
+	const group = sum(
+		lanes
+			.slice(barIndex, lastBar + 1)
+			.map((lane) => lane.h)
+			.filter(Boolean),
+	);
+	const rise = sum(
+		lanes
+			.slice(barIndex + 1)
+			.map((lane) => lane.h)
+			.filter(Boolean),
+	);
+
+	const marks = row.marks
+		.map((mark) => ({ ...mark, frame: resolveMarkFrame(mark.at, row.main) }))
+		.filter((mark) => Number.isFinite(mark.frame));
+
+	if (marks.length) {
+		lanes.push({
+			node: h(
+				"div",
+				{ class: "fc-lane fc-lane-marks", style: `--fc-mark-rise:${rise}` },
+				marks.map((mark) =>
+					h(
+						"div",
+						{ class: "fc-mark", style: `left:${(mark.frame / max) * 100}%` },
+						[
+							h("span", { class: "fc-mark-caret" }),
+							h("span", { class: "fc-mark-leader" }),
+							h("span", { class: "fc-mark-text" }, mark.text),
+						],
+					),
+				),
+			),
+		});
+	}
+
+	return { lanes: lanes.map((lane) => lane.node), lift, group };
+}
+
+/** The phase legend for a set of rows, and whether it sits to the right.
+ *
+ * `legend` says where it goes as well as whether it appears at all: bottom
+ * (the default), right, or off. A single phase needs no key. */
+export function buildLegend(rows, map, placement) {
 	const used = [];
 	for (const row of rows) {
 		for (const segment of [...row.main, ...row.tracks.flat()]) {
@@ -651,45 +673,27 @@ export function FrameChartComponent(properties, children) {
 	};
 	used.sort((a, b) => rank(a) - rank(b));
 
-	/* `legend` says where it goes as well as whether it appears at all:
-	   bottom (the default), right, or off. */
-	const legendAt = String(get("legend") ?? "bottom")
+	const legendAt = String(placement ?? "bottom")
 		.trim()
 		.toLowerCase();
 	const legendOff = ["false", "off", "none", "hide", "no"].includes(legendAt);
 	const legendRight = legendAt === "right" || legendAt === "side";
 
-	const parts = [];
-	if (caption?.length) {
-		parts.push(h("figcaption", { class: "fc-caption" }, caption));
-	}
-	/* The plot scrolls on its own, so a legend beside it stays put. */
-	parts.push(
-		h("div", { class: "fc-body" }, [h("div", { class: "fc-grid" }, grid)]),
-	);
+	if (used.length < 2 || legendOff) return { legend: null, legendRight };
 
-	if (used.length > 1 && !legendOff) {
-		parts.push(
-			h(
-				"div",
-				{ class: "fc-legend" },
-				used.map((entry) =>
-					h("span", { class: "fc-legend-item" }, [
-						h("span", { class: `fc-swatch fc-fill-${entry.fill}` }),
-						entry.label,
-					]),
-				),
+	return {
+		legend: h(
+			"div",
+			{ class: "fc-legend" },
+			used.map((entry) =>
+				h("span", { class: "fc-legend-item" }, [
+					h("span", { class: `fc-swatch fc-fill-${entry.fill}` }),
+					entry.label,
+				]),
 			),
-		);
-	}
-
-	return h(
-		"figure",
-		{
-			class: `frame-chart not-prose${legendRight ? " fc-legend-right" : ""}`,
-		},
-		parts,
-	);
+		),
+		legendRight,
+	};
 }
 
 /** Ticks on clean numbers: 5, 10, 20, 25, 50, 100... */
