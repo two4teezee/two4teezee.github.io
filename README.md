@@ -245,6 +245,104 @@ is drawn as a bar, one per row.
 do on a framechart. The table scrolls sideways below about 30rem rather than
 squeezing the bars.
 
+### Legend row
+
+Anything written after the table, inside the `:::frametable`, becomes a legend
+row across the foot of the table, ruled off from the body the way the header
+is.
+
+```markdown
+:::frametable{caption="Crouching normals"}
+| Move | Damage | Chain<br>Cancel | Block<br>Stun | Frame Data |
+|---|:-:|:-:|:-:|---|
+| :icon{name="_CROUCH"} :icon{name="^LP"} | 20 | ○ | +4 | startup=3 active=3 recovery=4 |
+| :icon{name="_CROUCH"} :icon{name="^HK"} | 80 | ×*1 | -7 | startup=6 active=4 recovery=20 |
+
+- ○ = Cancelable
+- × = Not cancelable
+
+\*1 = Special cancelable on hit only.
+Damage is listed against a standing opponent.
+:::
+```
+
+- **Leave a blank line** after the table, or markdown reads the next line as
+  another row.
+- **A list is a legend** - its items run side by side and wrap as needed.
+- **A paragraph is footnotes** - each source line is its own note, and a long
+  one wraps under its own text rather than under its key.
+- **`key = text`** sets the key (bold, full-strength ink) apart from what it
+  explains. It works in both, and the key can be a glyph (`:icon{...} = Crouching`)
+  or anything inline. The spaces around `=` are required; a line without them is
+  plain text. Escape a leading `*` (`\*1`) so markdown can't pair it with
+  another `*` as emphasis.
+
+## Frame chart tables
+
+`:::framechartable` is a frame table built for one move at several strengths -
+a special, say, with a row each for light, medium, heavy and EX. It takes the
+same table, but its bars share a framechart's axis: ticks along the foot of the
+bar column and gridlines through every row, so each version can be read
+against absolute frame numbers ("active until frame 22") rather than only
+against the others.
+
+```markdown
+:::framechartable[Cannon Drill :icon{name="_D"}:icon{name="_DF"}:icon{name="_F"}:icon{name="^K"}]
+| Version | Damage | Block<br>Stun | Hit<br>Stun | Notes | Frame Data |
+|:-:|:-:|:-:|:-:|:-:|---|
+| :icon{name="^LK"} | 70 | -12 | KD | - | startup=8 active=14 land=9 |
+| :icon{name="^HK"} | 90 | -8 | KD | - | startup=10 active=18 land=9 |
+| :icon{name="_EX"} | 40+100 | +2 | KD | *1 | startup=8 active=6 land=9 ; inv=1-8 |
+
+\*1 = Air-blockable once airborne.
+:::
+```
+
+- **The caption is the move** - its name and input, glyphs and all, in
+  `:::framechartable[...]` - which leaves the first column free to name each
+  version.
+- **The axis** runs to a round number of ticks past the longest bar, as on a
+  framechart; `max`, `step` and `unit` set it the same way. Its unit sits at
+  the right-hand end of the columns before it, level with the ticks.
+- **The bar column** takes 55% of the width rather than 40%, since a single
+  move needs fewer columns than a sheet of normals.
+
+Everything else - columns, `\n` breaks, `+`/`-`/`×` colouring, the `;` fields,
+the legend row, `legend`, `labels` and `map` - works as it does on a frame
+table.
+
+### Inset
+
+A table written before the frame data becomes an inset: the write-up and
+clips for the move, drawn between the caption and the data. It has no header
+row - markdown still wants the `|--|--:|` line under the first row, but that
+row is drawn as an ordinary one - and `inset` sets its column widths, in
+order:
+
+```markdown
+:::framechartable[Cannon Drill :icon{name="_D"}:icon{name="_DF"}:icon{name="_F"}:icon{name="^K"}]{inset="70% 30%"}
+| Her best tool for closing distance. Point-blank it's very unsafe, but spaced out it hits late in the slide. | <video autoplay muted loop><source src="/posts/.../drill.webm" type="video/webm"></video> |
+|--|--:|
+
+| Version | Damage | Block<br>Stun | Hit<br>Stun | Notes | Frame Data |
+|:-:|:-:|:-:|:-:|:-:|--- |
+| :icon{name="^LK"} | 70 | -19 | KD | - | startup=8 active=16 land=20 |
+:::
+```
+
+- **Any number of columns and rows** - text in one, clips or stills in the
+  others, in whatever order. `inset="60% 20% 20%"` gives a move two clips; a
+  column the list leaves out shares whatever width is left, and with no
+  `inset` at all the columns split evenly.
+- **Media fills its column**: an `img` or `video` is sized to the column's
+  width and gets the figure's rounded corners, so it needs no `width` or
+  `style` of its own. Glyphs stay glyph-sized.
+- **The text** is set in the post's body size and wraps; markdown, glyphs and
+  `<br>` work in it as in any table cell. `|--|--:|` still right-aligns a
+  column.
+- The frame table is always the **last** table in the directive, so a
+  `:::frametable` takes an inset the same way.
+
 ## Table layouts
 
 A markdown table in a post is an ordinary table until it is wrapped in a `div`
@@ -257,8 +355,8 @@ split, with row line-height tightened so rows of glyphs sit close together.
 
 ```markdown
 :::div{class="md-table-movelist"}
-| Movelist Overview |  |  |
-| --- | --- | --- |
+| Movelist Overview |  |   |
+| --- | --- | ---  |
 | **Special Moves** |  |  |
 | `Gohadoken`   | :icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"} | :icon{name="_EX"} available |
 | `Senkugoshoha`| :icon{name="_DSF"}:icon{name="_++"}:icon{name="^P"} | :icon{name="_EX"} available |

@@ -649,6 +649,130 @@ a.card-github.fetch-error
     min-width: 12rem
     padding: 0
 
+  // The legend row: one cell across every column, ruled off from the body
+  // the way the header is, in the chart legend's type.
+  tfoot .ft-notes
+    padding: 0.5rem 0.55rem 0.15rem
+    white-space: normal
+    vertical-align: top
+    border-top: 1px solid var(--fc-axis-line)
+    border-bottom: none
+
+  // Zero width of its own, then stretched to the cell's: notes wrap to the
+  // table rather than widening the columns above them to fit on one line.
+  .ft-notes-body
+    display: flex
+    flex-direction: column
+    gap: 0.3rem
+    width: 0
+    min-width: 100%
+    font-size: 0.72rem
+    line-height: 1.35
+    color: var(--fc-ink-muted)
+
+  .ft-legend
+    display: flex
+    flex-wrap: wrap
+    gap: 0.3rem 0.9rem
+
+  .ft-note
+    display: inline-flex
+    align-items: baseline
+    gap: 0.35rem
+
+  .ft-note-key
+    flex: none
+    font-weight: 600
+    color: var(--fc-ink)
+
+    &.ft-plus
+      color: var(--fc-plus)
+
+    &.ft-minus
+      color: var(--fc-minus)
+
+  // A footnote's text wraps under itself, not under its key.
+  .ft-footnote
+    display: flex
+
+    .ft-note-text
+      flex: 1 1 auto
+      min-width: 0
+
+  // The inset: prose and clips above the data, in the post's own type rather
+  // than the table's. It sits outside .fc-body, so it wraps instead of
+  // scrolling, and none of the table's rules or no-wrap apply to it.
+  .ft-inset
+    margin: 0 0 0.9rem
+
+    table
+      width: 100%
+      margin: 0
+      table-layout: fixed
+      border-collapse: collapse
+
+    td
+      padding: 0 0 0 1rem
+      vertical-align: top
+      white-space: normal
+      border: none
+      font-size: 0.9rem
+      line-height: 1.55
+      color: var(--fc-ink)
+
+      &:first-child
+        padding-left: 0
+
+    tr + tr td
+      padding-top: 0.75rem
+
+    p
+      margin: 0
+
+    // Glyphs keep their size; clips and stills fill their column.
+    img.md-icon
+      max-width: none
+      vertical-align: -0.3em
+
+    img:not(.md-icon), video, picture
+      display: block
+      width: 100%
+      max-width: 100%
+      height: auto
+      margin: 0
+      border-radius: var(--radius-large)
+
+// :::framechartable - a frame table with a framechart's axis: one move at
+// several strengths, so the bar column takes more of the width.
+.frame-chartable
+  .ft-frames
+    width: 55%
+
+  // The gridlines span the whole cell, top to bottom, so they run unbroken
+  // from row to row; side to side they match the cell's padding, which is
+  // where the bars start and end.
+  tbody .ft-frames
+    position: relative
+
+    .fc-gridlines
+      inset: 0 0.55rem 0 0.9rem
+
+  .ft-axis-row td
+    padding-top: 0
+    border-bottom: none
+
+  // The axis line sits right under the last row, where the gridlines end.
+  .ft-axis .fc-axis
+    margin-top: 0
+
+  .ft-axis-unit
+    padding-top: 0.2rem
+    font-size: 0.65rem
+    line-height: 1
+    text-align: right
+    vertical-align: top
+    color: var(--fc-ink-muted)
+
 // legend=right: caption across the top, plot and legend side by side. The
 // plot column gets min-width 0 so it yields to the legend and scrolls inside
 // itself rather than pushing the legend off the figure.

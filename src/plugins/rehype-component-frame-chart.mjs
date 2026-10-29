@@ -445,46 +445,14 @@ export function FrameChartComponent(properties, children) {
 		);
 	}
 
-	const longest = Math.max(...rows.map(rowEnd));
-	/* Ticks are spaced off the scale actually drawn, so a `max` set wider than
-	   the data doesn't leave the axis crowded with the data's own step. */
-	const given = Number(get("max"));
-	const step =
-		Number(get("step")) > 0
-			? Number(get("step"))
-			: niceStep(given > 0 ? given : longest);
-	const max = given > 0 ? given : Math.ceil(longest / step) * step;
+	const { max, ticks } = axisScale(
+		Math.max(...rows.map(rowEnd)),
+		get("max"),
+		get("step"),
+	);
 	const showValues = String(get("labels") ?? "auto") !== "off";
 	const unit = get("unit") ?? "frames";
-
-	const ticks = [];
-	for (let frame = 0; frame <= max + 1e-9; frame += step) {
-		ticks.push(Math.round(frame * 1000) / 1000);
-	}
-
-	/* Drawn per row rather than once behind the whole grid: every plot cell is
-	   the same column, so the lines still read as continuous, and they cannot
-	   drift out of step with the bars. */
-	const gridlines = () =>
-		h(
-			"div",
-			{ class: "fc-gridlines" },
-			ticks.map((frame) => {
-				/* A line at the very end of the scale would hang its 1px past
-				   the plot and put a scrollbar on it, so it is drawn just
-				   inside instead. */
-				const edge =
-					frame === 0
-						? " fc-gridline-zero"
-						: Math.abs(frame - max) < 1e-6
-							? " fc-gridline-end"
-							: "";
-				return h("div", {
-					class: `fc-gridline${edge}`,
-					style: `left:${(frame / max) * 100}%`,
-				});
-			}),
-		);
+	const gridlines = () => buildGridlines(ticks, max);
 
 	const grid = [];
 
@@ -512,25 +480,7 @@ export function FrameChartComponent(properties, children) {
 	/* The unit rides in the label column, level with the ticks, so it never
 	   has to fight the last tick for the right-hand end of the axis. */
 	grid.push(h("div", { class: "fc-axis-unit" }, unit || ""));
-	grid.push(
-		h(
-			"div",
-			{ class: "fc-axis" },
-			ticks.map((frame, index) => {
-				const edge =
-					index === 0
-						? " fc-tick-first"
-						: index === ticks.length - 1
-							? " fc-tick-last"
-							: "";
-				return h(
-					"span",
-					{ class: `fc-tick${edge}`, style: `left:${(frame / max) * 100}%` },
-					String(frame),
-				);
-			}),
-		),
-	);
+	grid.push(buildAxis(ticks, max));
 
 	const { legend, legendRight } = buildLegend(rows, map, get("legend"));
 
@@ -550,6 +500,68 @@ export function FrameChartComponent(properties, children) {
 			class: `frame-chart not-prose${legendRight ? " fc-legend-right" : ""}`,
 		},
 		parts,
+	);
+}
+
+/** The scale and its ticks. Ticks are spaced off the scale actually drawn, so
+ *  a `max` set wider than the data doesn't leave the axis crowded with the
+ *  data's own step. */
+export function axisScale(longest, maxAttr, stepAttr) {
+	const given = Number(maxAttr);
+	const step =
+		Number(stepAttr) > 0
+			? Number(stepAttr)
+			: niceStep(given > 0 ? given : longest);
+	const max = given > 0 ? given : Math.ceil(longest / step) * step;
+	const ticks = [];
+	for (let frame = 0; frame <= max + 1e-9; frame += step) {
+		ticks.push(Math.round(frame * 1000) / 1000);
+	}
+	return { max, ticks };
+}
+
+/** One plot cell's gridlines. Drawn per row rather than once behind the
+ *  whole grid: every plot cell is the same column, so the lines still read as
+ *  continuous, and they cannot drift out of step with the bars. */
+export function buildGridlines(ticks, max) {
+	return h(
+		"div",
+		{ class: "fc-gridlines" },
+		ticks.map((frame) => {
+			/* A line at the very end of the scale would hang its 1px past the
+			   plot and put a scrollbar on it, so it is drawn just inside
+			   instead. */
+			const edge =
+				frame === 0
+					? " fc-gridline-zero"
+					: Math.abs(frame - max) < 1e-6
+						? " fc-gridline-end"
+						: "";
+			return h("div", {
+				class: `fc-gridline${edge}`,
+				style: `left:${(frame / max) * 100}%`,
+			});
+		}),
+	);
+}
+
+export function buildAxis(ticks, max) {
+	return h(
+		"div",
+		{ class: "fc-axis" },
+		ticks.map((frame, index) => {
+			const edge =
+				index === 0
+					? " fc-tick-first"
+					: index === ticks.length - 1
+						? " fc-tick-last"
+						: "";
+			return h(
+				"span",
+				{ class: `fc-tick${edge}`, style: `left:${(frame / max) * 100}%` },
+				String(frame),
+			);
+		}),
 	);
 }
 
