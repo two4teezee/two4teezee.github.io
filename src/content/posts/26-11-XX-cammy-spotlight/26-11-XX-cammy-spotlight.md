@@ -10,21 +10,40 @@ lang: ''
 ---
 
 
-| Creation Spotlight Information |                                                                                 |                 |                              |
-| ------------------------------ | ------------------------------------------------------------------------------- | --------------- | ---------------------------- |
-| `creation`                     | Cammy                                                                           | `author`        | Phantom of the Server (PotS) |
-| `creation type`                | Character                                                                       | `compatibility` | Ikemen GO 1.0                |
-| `download link`                | [PotS's Webpage](https://network.mugenguild.com/pots/index.html)                | `latest update` | 2026                         |
-| `discord or forum link`        | [Discoard](https://discord.com/channels/233345562261323776/1514866752717062245) | `my thoughts`   |                              |
+| Creation Spotlight Information |                                                                                |                 |                              |
+| ------------------------------ | ------------------------------------------------------------------------------ | --------------- | ---------------------------- |
+| `creation`                     | Cammy                                                                          | `author`        | Phantom of the Server (PotS) |
+| `creation type`                | Character                                                                      | `compatibility` | Ikemen GO 1.0                |
+| `download link`                | [PotS's Webpage](https://network.mugenguild.com/pots/index.html)               | `latest update` | 2026                         |
+| `discord or forum link`        | [Discord](https://discord.com/channels/233345562261323776/1514866752717062245) | `my thoughts`   |                              |
 
-In the Mugen and Ikemen community, PotS requires no introduction - an entire subgenre or style of character creation is named after him and it is arguably the most popular style of character creation in the community.
+In the Mugen and Ikemen community, PotS requires no introduction - an entire subgenre of character creation is named after him and it is arguably the most popular style of character creation in the community. 
+After a short hiatus, PotS came back to the community around COVID.
+Like many others (myself included), COVID reconnected people with their old hobbies and for PotS that meant embracing the Ikemen GO community and driving engine development forward with his many contributions.
+Along the way, PotS has maintained and updated his characters.
+While his Cammy is not his most recognizable creation, it is my favorite by a long shot.
+Join me as we dive into this character creation and really put apart what makes this Cammy, and the PotS gameplay system tick.
 
 ### About Cammy
+Cammy made her Super Street Fighter II, which was my first real foray into a Street Fighter title..
+She was one of four new fighters added in that version, alongside Fei Long, T. Hawk and Dee Jay.
+She later appeared in Street Fighter Alpha 2 Gold, then Alpha 3, where she plays as her younger “Killer Bee” self.
+These are the sprites PotS used for his Cammy interpretation.
+
+M. Bison’s Shadaloo created Cammy through genetic engineering. 
+She was grown as a possible spare body for Bison and conditioned as an assassin under the codename Killer Bee. 
+She was one of the “Shadaloo Dolls,” his group of brainwashed female agents.
+In the SFA3 era, she starts to break free of Bison’s control, partly through meeting other fighters who show her kindness. 
+When Shadaloo’s Psycho Drive is destroyed, she loses her memory.
+
+I mention all of this because interestingly PotS's Cammy has two modes - Cammy proper, and "Doll Mode" which is inspired by Juni and Juli from SFA3.
+I'll cover both in-depth in this spotlight.
 
 ### Gameplay Systems Overview
-Most of KarmaChameleon's characters, to include Gouken, are in the "PotS style" which (in the Mugen community) is a popular collection of gameplay systems loosely pulled from CvS2.
-I typically favor more limited and coherent gameplay systems that drive interesting gameplay decisions, but PotS style isn't about balance, it's about allowing the user access to whatever systems they enjoy, and in a way that is one of the truest tenets of the Mugen community.
-That said, there is no denying that PotS, JMorphman and many others like Karma have honed this style to a point where it is compelling and fun.
+As I stated in my spotlight for Karma's Gouken, PotS style isn't about balance, it's about allowing the user access to whatever systems they enjoy, and in a way that is one of the truest tenets of the Mugen community.
+While PotS style could be seen as lacking cohesion, in reality it includes features that allows a hot topic in the FGC at the moment: player expression.
+Of course, Mugen/Ikemen isn't played competitively, but the systems in PotS' characters are balanced in such a way that none of them are mandatory for a character to be played effectively.
+And perhaps most importantly, the balance that has been reached over the many years of iteration results in a fun, expressive collection of systems that is many things at once, yet its own thing all the same; especially if you care to dig deep enough.
 
 :::div{class="md-table-movelist"}
 | Gameplay Systems Overview       |                                                                          |                                                             |
@@ -93,7 +112,7 @@ In light of this, Gouken's PotS-provided Forward and Backward Rolls are really u
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `EX Specials`      | Gouken can spend half a power bar to execute an EX version of the special. Gouken have several notable EX Specials that unnlock significant damage potential.                                                                                                                                |
 | `Special Cancels`  | All of Gouken's Special moves can be cancelled into super moves if meter is available.                                                                                                                                                                                                       |
-| `MAX Cancels`      | Some Level 1 Supers can be cancelled into MAX (Level 2) Supers.                                                                                                                                                                                                                                        |
+| `MAX Cancels`      | Some Level 1 Supers can be cancelled into MAX (Level 2) Supers.                                                                                                                                                                                                                              |
 | `Custom Combos`    | Activating Custom allows all moves to be cancelled, removes limitations on the juggle system, and gives a short invulnerability window at the start. Additionally, when Gouken flashes towards the end of the Custom, Gouken can use an EX Special or Level 1 Super to end the Custom Combo. |
 :::
 
@@ -116,99 +135,99 @@ You can't use the CC activation to blow up an opponent like in SFA2, this implem
 :::frametable{caption="Normals"}
 |                  Move                   | Damage | Chain<br>Cancel | Special<br>Cancel | Super<br>Cancel | Block<br>Stun | Hit<br>Stun | Notes  | Frame Data                     |
 | :-------------------------------------: | :----: | :-------------: | :---------------: | :-------------: | :-----------: | :---------: | :----: | ------------------------------ |
-| :icon{name="_CROUCH"} :icon{name="^LP"} |   20   |        ○        |         ○         |        ○        |      +4       |     +6      |   -    | startup=2 active=3 recovery=4  |
-| :icon{name="_CROUCH"} :icon{name="^MP"} |   50   |        ×        |         ○         |        ○        |      +4       |     +6      |   -    | startup=3 active=4 recovery=6  |
-| :icon{name="_CROUCH"} :icon{name="^HP"} |   70   |        ×        |         ○         |        ○        |      +2       |     +4      |   -    | startup=4 active=6 recovery=9  |
-| :icon{name="_CROUCH"} :icon{name="^LK"} |   25   |        ○        |         ○         |        ○        |      +2       |     +4      |   -    | startup=3 active=3 recovery=6  |
-| :icon{name="_CROUCH"} :icon{name="^MK"} |   55   |        ×        |         ○         |        ○        |      +1       |     +3      |   -    | startup=3 active=5 recovery=9  |
-| :icon{name="_CROUCH"} :icon{name="^HK"} |   80   |        ×        |         ×         |        ×        |      -7       |     +48     |   KD   | startup=6 active=4 recovery=20 |
-| :icon{name="_CLOSE"} :icon{name="^LP"}  |   25   |        ○        |         ○         |        ○        |      +4       |     +6      |   -    | startup=2 active=3 recovery=4  |
-| :icon{name="_CLOSE"} :icon{name="^MP"}  |   50   |        ×        |         ○         |        ○        |      -1       |     +1      |   -    | startup=3 active=6 recovery=9  |
-| :icon{name="_CLOSE"} :icon{name="^HP"}  |   70   |        ×        |         ○         |        ○        |      +4       |     +6      |   -    | startup=3 active=3 recovery=10 |
-| :icon{name="_CLOSE"} :icon{name="^LK"}  |   25   |        ○        |         ○         |        ○        |      +1       |     +3      |   -    | startup=2 active=5 recovery=5  |
-| :icon{name="_CLOSE"} :icon{name="^MK"}  |   55   |        ×        |         ○         |        ○        |      +3       |     +5      |   -    | startup=3 active=6 recovery=6  |
-| :icon{name="_CLOSE"} :icon{name="^HK"}  |   80   |        ×        |         ×         |        ×        |      +0       |     +93     | LX, JX | startup=7 active=2 recovery=15 |
-|  :icon{name="_FAR"} :icon{name="^LP"}   |   20   |        ○        |         ○         |        ○        |      +3       |     +5      |   -    | startup=3 active=3 recovery=5  |
-|  :icon{name="_FAR"} :icon{name="^MP"}   |   55   |        ×        |         ○         |        ○        |      +3       |     +5      |   -    | startup=4 active=3 recovery=8  |
-|  :icon{name="_FAR"} :icon{name="^HP"}   |   75   |        ×        |         ×         |        ○        |      +1       |     +3      |   -    | startup=5 active=3 recovery=13 |
-|  :icon{name="_FAR"} :icon{name="^LK"}   |   30   |        ○        |         ○         |        ○        |      +0       |     +2      |   -    | startup=3 active=6 recovery=6  |
-|  :icon{name="_FAR"} :icon{name="^MK"}   |   55   |        ×        |         ×         |        ○        |      +0       |     +2      |   -    | startup=5 active=7 recovery=8  |
-|  :icon{name="_FAR"} :icon{name="^HK"}   |   70   |        ×        |         ×         |        ○        |      -4       |     -2      |   -    | startup=7 active=2 recovery=20 |
+| :icon{name="_CROUCH"} :icon{name="^LP"} |   20   |        ○        |        ○*1        |        ○        |      +4       |     +6      |   -    | startup=3 active=3 recovery=4  |
+| :icon{name="_CROUCH"} :icon{name="^MP"} |   50   |        ×        |         ○         |        ○        |      +4       |     +6      |   -    | startup=4 active=4 recovery=6  |
+| :icon{name="_CROUCH"} :icon{name="^HP"} |   70   |        ×        |         ×         |        ○        |      +2       |     +4      |   -    | startup=5 active=6 recovery=9  |
+| :icon{name="_CROUCH"} :icon{name="^LK"} |   25   |        ○        |        ○*1        |        ○        |      +2       |     +4      |   -    | startup=4 active=3 recovery=6  |
+| :icon{name="_CROUCH"} :icon{name="^MK"} |   50   |        ×        |         ○         |        ○        |      +0       |     +2      |   -    | startup=4 active=5 recovery=9  |
+| :icon{name="_CROUCH"} :icon{name="^HK"} |   70   |        ×        |         ×         |        ×        |      -7       |     KD      | HKD*2  | startup=7 active=4 recovery=20 |
+| :icon{name="_CLOSE"} :icon{name="^LP"}  |   25   |        ○        |        ○*1        |        ○        |      +4       |     +6      |   -    | startup=3 active=3 recovery=4  |
+| :icon{name="_CLOSE"} :icon{name="^MP"}  |   50   |        ×        |         ○         |        ○        |      -1       |     +1      |   *3   | startup=4 active=6 recovery=9  |
+| :icon{name="_CLOSE"} :icon{name="^HP"}  |   70   |        ×        |         ○         |        ○        |      +4       |     +6      |   -    | startup=4 active=3 recovery=10 |
+| :icon{name="_CLOSE"} :icon{name="^LK"}  |   25   |        ×        |         ○         |        ○        |      +1       |     +3      |   -    | startup=3 active=5 recovery=5  |
+| :icon{name="_CLOSE"} :icon{name="^MK"}  |   55   |        ×        |         ○         |        ○        |      +2       |     +4      |   -    | startup=4 active=6 recovery=6  |
+| :icon{name="_CLOSE"} :icon{name="^HK"}  |   80   |        ×        |         ×         |        ×        |      -2       |     KD      | LX, JX | startup=7 active=2 recovery=17 |
+|            :icon{name="^LP"}            |   20   |        ○        |        ○*1        |        ○        |      +3       |     +5      |   -    | startup=4 active=3 recovery=5  |
+|            :icon{name="^MP"}            |   55   |        ×        |         ○         |        ○        |      +3       |     +5      |   -    | startup=5 active=3 recovery=8  |
+|            :icon{name="^HP"}            |   75   |        ×        |         ×         |        ○        |      +1       |     +3      |   -    | startup=6 active=3 recovery=13 |
+|            :icon{name="^LK"}            |   30   |        ×        |         ○         |        ○        |      -1       |     +1      |   -    | startup=4 active=6 recovery=6  |
+|            :icon{name="^MK"}            |   55   |        ×        |         ×         |        ○        |      -1       |     +1      |   -    | startup=6 active=7 recovery=8  |
+|            :icon{name="^HK"}            |   70   |        ×        |         ×         |        ○        |      -5       |     -3      |   -    | startup=8 active=2 recovery=20 |
+|  :icon{name="_AIR"} :icon{name="^LP"}   |   35   |        ×        |        ○*4        |        ×        |      11       |     13      |   *5   | startup=3 active=18            |
+|  :icon{name="_AIR"} :icon{name="^MP"}   |   50   |        ×        |        ○*4        |        ×        |      14       |     13      |   *5   | startup=5 active=6             |
+|  :icon{name="_AIR"} :icon{name="^HP"}   |   75   |        ×        |         ×         |        ×        |      17       |     13      |   *5   | startup=5 active=6             |
+|  :icon{name="_AIR"} :icon{name="^LK"}   |   30   |        ×        |         ×         |        ×        |      11       |     13      |   *5   | startup=4 active=18            |
+|  :icon{name="_AIR"} :icon{name="^MK"}   |   55   |        ×        |         ×         |        ×        |      14       |     13      |   *5   | startup=6 active=6             |
+|  :icon{name="_AIR"} :icon{name="^HK"}   |   70   |        ×        |         ×         |        ×        |      17       |     13      |   *5   | startup=5 active=6             |
 
+- ○ = Cancelable on hit or block
+- × = Not cancelable
 - KD = Knockdown
-- LX = Launch on hit
+- HKD = Hard knockdown
+- LX = Launches on hit
 - JX = Jump cancelable on hit
+
+\*1 = Also cancelable on whiff.
+\*2 = Only on counter hit; otherwise a recoverable knockdown.
+\*3 = The late part of the move does 40 damage instead.
+\*4 = Into air specials, early in the move only.
+\*5 = Jumping normals: the stun columns are frames of stun dealt, not advantage, which depends on how late the jump-in hits. Recovery runs until landing.
 :::
 
-:::div{class="md-table-movelist"}
-| Movelist Overview                 |                                                                                           |                                                                                             |
-| --------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Command Normals**               |                                                                                           |                                                                                             |
-| `Sakotsu Wari`                    | :icon{name="_F"}:icon{name="_++"}:icon{name="^MP"}                                        | Overhead attack.                                                                            |
-| `Tenmakujinkyaku`                 | :icon{name="_AIR"}:icon{name="_DF"}:icon{name="_++"}:icon{name="^MK"}                     |                                                                                             |
-| `Raikotokyaku`                    | :icon{name="_NEAR"}:icon{name="_F"} or :icon{name="_B"}:icon{name="_++"}:icon{name="^2P"} | Punch throw is good for pushing into corner. However...                                     |
-| `Amaoroshi`                       | :icon{name="_NEAR"}:icon{name="_F"} or :icon{name="_B"}:icon{name="_++"}:icon{name="^2K"} | This often will be your preferred option as you can reliably land Shin Shoryuken from here. |
-| **Special Moves**                 |                                                                                           |                                                                                             |
-| `Gohadoken`                       | :icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"}                                       | :icon{name="_EX"} available; can be charged for a two-hit fireball                          |
-| `Senkugoshoha`                    | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^P"}                                       | :icon{name="_EX"} available                                                                 |
-| `Tatsumaki Gorasen`               | :icon{name="_QCB"}:icon{name="_++"}:icon{name="^K"}                                       | :icon{name="_EX"} available                                                                 |
-| `Tatsumaki Senpukyaku`            | :icon{name="_AIR"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^K"}                     | :icon{name="_EX"} available                                                                 |
-| `Kyakkishu`                       | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"}                                       | :icon{name="_EX"} available                                                                 |
-| :icon{name="_!"}`Hyakki Gozan`    | :icon{name="_!"}                                                                          |                                                                                             |
-| :icon{name="_!"}`Hyakki Goheki`   | :icon{name="_!"}:icon{name="^P"}                                                          |                                                                                             |
-| :icon{name="_!"}`Hyakki Gojin`    | :icon{name="_!"}:icon{name="^K"}                                                          |                                                                                             |
-| :icon{name="_!"}`Hyakki Gosai`    | :icon{name="_!"}:icon{name="_NEAR"}:icon{name="^2P"} or :icon{name="^2K"}                 |                                                                                             |
-| `Kongoshin`                       | :icon{name="_DSB"}:icon{name="_++"}:icon{name="^P"}                                       | :icon{name="_EX"} available                                                                 |
-| **Super Moves**                   |                                                                                           |                                                                                             |
-| `Kinjite Shoryuken`               | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^P"}                     | Costs 1 Power Bar                                                                           |
-| `Shinku Tatsumaki Senpukyaku`     | :icon{name="_QCB"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^K"}                     | Costs 1 Power Bar                                                                           |
-| `MAX Kinjite Shoryuken`           | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^2P"}                    | Costs 2 Power Bar                                                                           |
-| `MAX Shinku Tatsumaki Senpukyaku` | :icon{name="_QCB"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^2K"}                    | Costs 2 Power Bar                                                                           |
-| `Shin Shoryuken`                  | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^2K"}                    | Costs 3 Power Bar                                                                           |
-| `Denjin Hadoken`                  | :icon{name="_QCB"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^2P"}                    | Costs 3 Power Bar, can be charged                                                           |
+:::frametable{caption="Unique attacks"}
+|                             Move                             | Mode  | Damage | Block<br>Stun | Hit<br>Stun | Notes | Frame Data                                          |
+| :----------------------------------------------------------: | :---: | :----: | :-----------: | :---------: | :---: | --------------------------------------------------- |
+| Knee Bullet :icon{name="_F"}:icon{name="_+"}:icon{name="^C"} |   C   | 40+40  |      +2       |     +4      |   -   | startup=13 active=2 recovery=6 active=2 recovery=13 |
+| Falling Arc :icon{name="_F"}:icon{name="_+"}:icon{name="^B"} |   D   | 50+30  |      +2       |     +4      |  OH   | startup=22 active=4 recovery=10                     |
+
+- C = Cammy mode (palettes 1-6)
+- D = Doll mode (palettes 7-12)
+- OH = Overhead
+
+Both also work with back instead of forward. Neither cancels into anything.
 :::
 
 #### Movelist Highlights
 
 :::div{class="md-table-move" style="--col1:85%; --col2:15%;"}
-| Standing Light Punch, Far Standing Light Kick| :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} |
-|--|--:|
+| Standing Light Punch, Far Standing Light Kick                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                                                                                                                               :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | Gouken's normals are definitely a mixed bag. His Standing Light attacks can chain into themselves. Unlike in SF4, Gouken can actually capitalize on this to use it as a hit confirm, but you need to be quick. :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} can be cancelled into light Tatsu, while :icon{name="^LP"}, :icon{name="^LP"}, :icon{name="_FAR"}:icon{name="^LK"} can be cancelled into Senkugoshoha, leading to big damage potential. Gouken's Crouching Light Punch is now 3f, addressing one of his big weaknesses in neutral, but his Crouching Light Kick is still not super useful. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/chainlights-2by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
 :::div{class="md-table-move" style="--col1:25%; --col2:75%;"}
-| Crouching Heavy Punch | :icon{name="_D"}:icon{name="_++"}:icon{name="^HP"} |
-|--|--:|
+| Crouching Heavy Punch                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                      :icon{name="_D"}:icon{name="_++"}:icon{name="^HP"} |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/chp-3by2.webm" type="video/webm">Sorry, video not supported.</video> | In SF4 this was one of Gouken's strongest normals. In SF4 it was a 6f normal that dealt heavy damage and also led to strong follow-on damage. That holds true in this implementation, either as a follow-up to a jump-in or as a ground punish that can lead to a strong combo. It's now a 5f normal that deals great damage and can actually be linked after Gohadoken, or used as a ground starter as a relatively safe punish. It's unsafe on block but you can follow it up with a Light Gohadoken to make it safe. |
 :::
 
 :::div{class="md-table-move" style="--col1:59%; --col2:26%; --col3:15%"}
-| Senkugoshoha | | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^P"} |
-|--|--|--:|
-| Increasing punch strengths result in greater travel distance and hit delay. For that reason you'll typically combo into the Light or EX versions. The Medium, Heavy and EX versions all have an afterimage - Gouken can pass through projectiles while the afterimage is active. The EX version is a primary source of damage for Gouken. Mid-screen, Gouken can combo into his Tatsu or go for a reset, while in the corner it leads to big damage - Karma gave Senkugoshoha more utility than in SF4! |  <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/sengoFB-3by2.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/Corner2EX-2by3.webm" type="video/webm">Sorry, video not supported.</video> |
+| Senkugoshoha                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                                                                                                                                                  |                                                                                                                                                                :icon{name="_DSF"}:icon{name="_++"}:icon{name="^P"} |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Increasing punch strengths result in greater travel distance and hit delay. For that reason you'll typically combo into the Light or EX versions. The Medium, Heavy and EX versions all have an afterimage - Gouken can pass through projectiles while the afterimage is active. The EX version is a primary source of damage for Gouken. Mid-screen, Gouken can combo into his Tatsu or go for a reset, while in the corner it leads to big damage - Karma gave Senkugoshoha more utility than in SF4! | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/sengoFB-3by2.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/Corner2EX-2by3.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
 :::div{class="md-table-move" style="--col1:25%; --col2:75%;"}
-| Kyakkishu | :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"} |
-|--|--:|
+| Kyakkishu                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                                    :icon{name="_DSF"}:icon{name="_++"}:icon{name="^K"} |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/goukenblender-16by9.webm" type="video/webm">Sorry, video not supported.</video> | Also known as the Demon Flip, this special has four follow-ups: press nothing to get a sweep (unsafe on block), press :icon{name="^P"} to turn it into an empty jump, press :icon{name="^K"} to do a diving kick that is positive on block, and finally :icon{name="^2K"} or :icon{name="^2P"} when near to get a grab. This special allows Gouken to really keep up the pressure in the corner when used effectively. The EX version has some tracking but frankly I wouldn't bother. |
 :::
 
 :::div{class="md-table-move" style="--col1:50%; --col2:25%; --col3:25%"}
-| Kongoshin | | :icon{name="_DSB"}:icon{name="_++"}:icon{name="^P"} |
-|--|--|--:|
+| Kongoshin                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                  |                                                                                                                                                                  :icon{name="_DSB"}:icon{name="_++"}:icon{name="^P"} |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | You might think Kongoshin is a redundant option for a character that has access to parries AND Zero Counter, but Kongoshin is a very interesting move. The counter window is a lot more forgiving than the parry window and it doesn't require meter. It deals good damage and is a decent option against characters that primarily rely on single hit moves. Beware, the counter will fail against counter hit moves. Interestingly, Kongoshin can be super cancelled out of, so if your reads are really good you can actually get a ton of damage out of this. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/counter-1by1.webm" type="video/webm">Sorry, video not supported.</video> | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/counterfail-1by1.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
 :::div{class="md-table-move" style="--col1:27%; --col2:73%;"}
-| Shinku Tatsumaki Senpukyaku | :icon{name="_QCB"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^K"} |
-|--|--:|
+| Shinku Tatsumaki Senpukyaku                                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                              :icon{name="_QCB"}:icon{name="_QCB"}:icon{name="_++"}:icon{name="^K"} |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/shinkutatsu-3by2.webm" type="video/webm">Sorry, video not supported.</video> | Gouken has several supers at his disposal but Shinku Tatsumaki Senpukyaku stands out. While Kinjite Shoryuken can be a good reversal super, its damage is lower than Shinku Tatsumaki Senpukyaku. This super has great damage potential and combos well off Tatsumaki Gorasen. Generally you're better off saving your meter for EX moves or Shin Shoryuken, but if you need damage now, this is your best option. The MAX version (with :icon{name="^2K"}) is also very strong and the ender to one of Gouken's strongest combos. |
 :::
 
 :::div{class="md-table-move" style="--col1:60%; --col2:40%;"}
-| Shin Shoryuken | :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^2K"} |
-|--|--:|
+| Shin Shoryuken                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                                                                                                                                   :icon{name="_QCF"}:icon{name="_QCF"}:icon{name="_++"}:icon{name="^2K"} |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | Karma did an amazing job of bringing Gouken's iconic Ultra to life in Mugen. This move deals a TON of damage, especially if you land the first hit deep. The classic setup off Amaoroshi (:icon{name="_NEAR"}:icon{name="_F"} or :icon{name="_B"}:icon{name="_++"}:icon{name="^2K"}) is still the preferred way of landing this super due to reduced scaling, but you can cancel specials into this as well. If you get the toss, wait for them to come back down to get the first hit deep. Just like in SF4, if you don't land that first hit deep you get a weaker version of the super that does substantially less damage. If you're a Gouken player, you live to land this super. | <video width="100%" autoplay muted loop style="margin:0;display:block;border-radius:10px"><source src="/posts/25-11-13-gouken-spotlight/ShinShoryuToss-16by9.webm" type="video/webm">Sorry, video not supported.</video> |
 :::
 
